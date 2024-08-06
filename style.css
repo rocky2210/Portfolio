@@ -11,15 +11,6 @@
     font-style: normal;
 }
 
-body {
-    font-family: 'Ben', sans-serif;
-}
-
-
-body {
-    background: hsl(0, 0%, 7%);
-    color-scheme: dark only;
-}
 
 body::before {
 	--line: hsl(0 0% 95% / 0.25);
@@ -99,6 +90,106 @@ body::before {
 
 }
 
+
+/* Reset properties */
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+img, ion-icon, a, button, time, span{
+    display: block;
+}
+
+button{
+    font: inherit;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+input, textarea{
+    display: block;
+    width: 100%;
+    background: none;
+    font: inherit;
+}
+
+::selection{
+    background-color: var(--green-crayola);
+    color: var(--smoky-black);
+}
+
+:focus{
+    outline-color: var(--green-crayola);
+}
+
+html{
+    font-family: var(--font-ben), sans-serif;
+}
+
+body{
+    background: var(--smoky-black);
+    color-scheme: dark only;
+}
+
+
+/* Reused style */
+.sidebar{
+    background: var(--eerie-black-2);
+    border: 1px solid var(--jet);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: var(--shadow-1);
+    z-index: 1;
+}
+
+.separator{
+    width: 100%;
+    height: 1px;
+    background: var(--jet);
+    margin: 16px 0;
+}
+
+.h2,h3,h4,h5{
+    color: var(--white-2);
+    text-transform: capitalize;
+}
+
+.h2{
+    font-size: var(--fs-1);
+}
+
+.h3{
+    font-size: var(--fs-2);
+}
+
+.h4{
+    font-size: var(--fs-3);
+}
+
+.h5{
+    font-size: var(--fs-7);
+    font-weight: var(--fw-500);
+}
+
+
+/* Main */
+main{
+    margin: 15px 12px;
+    margin-bottom: 75px;
+    min-width: 259px;
+}
 
 /* Sidebar */
 

@@ -17,7 +17,61 @@
     <main>
 
         <!-- Sidebar -->
-        <aside></aside>
+        <aside class="sidebar" data-sidebar>
+            <div class="sidebar-info">
+                <div class="info-content">
+                    <h1 class="name" title="Rocky">Rocky</h1>
+                    <!-- magic box -->
+                    
+                    <p class="title">Python Programmer</p>
+                </div>
+                <button class="info-more-btn" data-sidebar-btn>
+                    <span>Show Contacts</span>
+                    <!-- down icon -->
+                    <ion-icon name="chevron-down"></ion-icon>
+                </button>
+            </div>
+
+            <!-- Mail -->
+            <div class="sidebar-info-more">
+                <div class="separator"></div>
+                <ul class="contacts-list">
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <!-- mail icon -->
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Email</p>
+                            <a href="mailto:rocky@gmail.com" class="contact-link">rocky@gmail.com</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Social media -->
+                <div class="separator"></div>
+                    <ul class="social-list">
+                        <li class="social-item">
+                            <a href="#" class="social-link">
+                            <!-- logo -->
+                            <ion-icon name="logo-codepen"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#" class="social-link">
+                            <!-- logo -->
+                            <ion-icon name="logo-github"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#" class="social-link">
+                            <!-- logo -->
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+        </aside>
 
         <!-- Main content -->
             <div class="main-content">
@@ -56,5 +110,9 @@
 
     <!-- Background lines -->
     <a></a>
+
+    <!-- Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
