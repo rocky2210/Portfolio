@@ -1287,3 +1287,32 @@ textarea.form-input::-webkit-resizer {
     .timeline-text { max-width: 700px; }
 }
 
+/* Pulse animation */
+.navbar-link.active {
+    position: relative;
+}
+
+.navbar-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 35px;
+    right: -4%;
+    width: 6px;
+    height: 6px;
+    background-color: hsl(128, 100%, 68%); 
+    border-radius: 25px;
+    animation: pulse 1.4s infinite;
+    transform: translateX(-50%);
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
