@@ -34,7 +34,7 @@
     /* Typography */
 
     /* Font-family */
-    --font-ben: 'Ben', 'sans-serif';
+    --font-ben: 'Poppins', 'sans-serif';
 
     /* Font-size */
     --fs-1: 24px;
@@ -110,15 +110,13 @@ input, textarea{
 }
 
 html{
-    /* font-family: var(--font-ben), sans-serif; */
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-ben), sans-serif;
 }
 
 body{
     background: var(--smoky-black);
     color-scheme: dark only;
 }
-
 
 /* Background */
 body::before {
@@ -239,27 +237,6 @@ article.active{
     border-radius: 3px;
 }
 
-.h2,.h3,.h4.h5{
-    color: var(--white-2);
-    text-transform: capitalize;
-}
-
-.h2{
-    font-size: var(--fs-1);
-}
-
-.h3{
-    font-size: var(--fs-2);
-}
-
-.h4{
-    font-size: var(--fs-4);
-}
-
-.h4{
-    font-size: var(--fs-7);
-    font-weight: var(--fw-500);
-}
 
 .has-scrollbar::-webkit-scrollbar{
     width: 5px; /* Vertical scroll bar*/
@@ -393,11 +370,22 @@ main{
     visibility: visible;
 }
 
+.contacts-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+} 
+
 .contact-item{
     min-width: 100%;
     display: flex;
     align-items: center;
     gap: 16px;
+}
+
+.contact-info {
+    max-width: calc(100% - 46px);
+    width: calc(100% - 46px);
 }
 
 .contact-title{
@@ -407,9 +395,12 @@ main{
     margin-bottom: 2px;
 }
 
+
+
 .contact-info :is(.contact-link){
     color: var(--white-2);
     font-size: var(--fs-7);
+    font-style: normal;
 }
 
 .social-list{
@@ -533,7 +524,9 @@ main{
 }
 
 
-.service-item-title { margin-bottom: 7px; }
+.service-item-title { 
+    margin-bottom: 7px; 
+}
 
 
 .service-item-text {
@@ -612,6 +605,7 @@ main{
     font-weight: var(--fw-300);
     line-height: 1.6;
 }
+
 /* Projects */
 .project-list{
     display: grid;
@@ -802,6 +796,10 @@ textarea.form-input{
     margin-bottom: 25px;
 }
 
+textarea.form-input::-webkit-resizer { 
+    display: none; 
+}
+
 .form-input:focus:invalid { 
     border-color: var(--bittersweet-shimmer); 
 }
@@ -868,7 +866,7 @@ textarea.form-input{
 /* Responsive larger than 450px screen */
 
 @media (min-width: 450px) {
-    
+    /* Nothing */
 }
 /* Responsive larger than 580px screen */
 
@@ -928,14 +926,6 @@ textarea.form-input{
         
         .sidebar-info { 
             gap: 25px; 
-        }
-        
-        .avatar-box { 
-            border-radius: 30px; 
-        }
-        
-        .avatar-box img { 
-            width: 120px; 
         }
         
         .info-content .name { 
@@ -1039,6 +1029,11 @@ textarea.form-input{
             border-radius: 16px; 
         }
 
+        /* Skills */
+        .skills-item:not(:last-child) { 
+            margin-bottom: 25px; 
+        }
+
         /* Contact */
         .input-wrapper{
             gap: 30px;
@@ -1066,8 +1061,9 @@ textarea.form-input{
 /* Responsive larger than 768px screen */
 
 @media (min-width: 768px){
-    .sidebar, .article{
-        width: 700px;
+
+    .sidebar, article{
+        width: 700px ;
     }
 
     .has-scrollbar::-webkit-scrollbar-button { 
@@ -1200,6 +1196,9 @@ textarea.form-input{
     /* Reused style */
     .sidebar, article{
         width: auto;
+    }
+    .sidebar{
+        width: 280px;
     }
 
     .article{
