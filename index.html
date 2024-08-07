@@ -8,11 +8,66 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
 
+    <style>
+        html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+        /* Bubble Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow only in the loader */
+}
+
+@-webkit-keyframes move {
+    100% {
+        transform: translate3d(0, 0, -1000px);
+    }
+}
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, -1000px);
+    }
+}
+
+.bubble-wrap {
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    perspective: 600px;
+}
+
+.bubble {
+    position: absolute;
+    background: black;
+    opacity: 0.7;
+    border-radius: 50%;
+    -webkit-animation: move 3s infinite;
+            animation: move 3s infinite;
+}
+    </style>
     <!-- Custom css -->
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+    <div id="bubble-loader" class="loader">
+        <div class="bubble-wrap"></div>
+    </div>
     <!-- Main -->
     <main>
 
@@ -347,7 +402,6 @@
                     </section>
                 </article>
 
-
                 <!-- Skills -->
                 <article class="skills" data-page="skills">
                     <header>
@@ -436,6 +490,32 @@
     <!-- Scripts -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Bubble Loader Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bubbleWrap = document.querySelector('.bubble-wrap');
+            const bubbleCount = 100; // Number of bubbles
+
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                const size = Math.random() * 30 + 1; // Random size between 1 and 30
+                bubble.style.height = `${size}px`;
+                bubble.style.width = `${size}px`;
+                bubble.style.animationDelay = `${-(Math.random() * 10)}s`;
+                bubble.style.transform = `translate3d(${Math.random() * 1000}px, ${Math.random() * 1000}px, ${Math.random() * 2000}px)`;
+                bubble.style.background = 'hsl(128, 100%, 68%)';
+                bubbleWrap.appendChild(bubble);
+            }
+
+            // Hide loader after 5 seconds or once the main content is fully loaded
+            setTimeout(function () {
+                document.getElementById('bubble-loader').style.display = 'none';
+                document.body.style.overflow = 'auto'; // Enable scrolling
+            }, 2000);
+        });
+    </script>
 
     <!-- Custom scripts -->
     <script src="assets/scripts/script.js"></script>
