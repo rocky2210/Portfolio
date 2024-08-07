@@ -453,7 +453,8 @@ main{
 
 .navbar-link{
     color: var(--light-gray);
-    font-size: var(--fs-8);
+    font-size: var(--fs-7);
+    font-weight: var(--fw-500);
     padding: 20px 7px;
     transition: color var(--transition-1);
 }
@@ -982,7 +983,7 @@ textarea.form-input::-webkit-resizer {
         }
 
         .navbar-link{
-            --fs-8: 14px;
+            --fs-8: 16px;
         }
 
         /* About */
