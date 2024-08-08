@@ -303,6 +303,10 @@ main{
     gap: 15px;
 }
 
+.info-content{
+    position: relative;
+}
+
 .info-content .name{
     color: var(--white-2);
     font-size: 25px;
@@ -311,7 +315,9 @@ main{
     margin-bottom: 10px;
 }
 
-.info-content .title{
+.title{
+    position: relative;
+    display: flex;
     color: var(--white-1);
     background: var(--onyx);
     font-size: var(--fs-8);
@@ -319,7 +325,9 @@ main{
     width: max-content;
     padding: 3px 12px;
     border-radius: 8px;
+    top: -15px;
 }
+
 
 .info-more-btn{
     position: absolute;
@@ -748,20 +756,20 @@ main{
     color: var(--light-gray);
     font-size: var(--fs-7);
     font-weight: var(--fw-300);
-  }
-  
-  .skill-progress-bg {
+}
+
+.skill-progress-bg {
     background: var(--jet);
     width: 100%;
     height: 8px;
     border-radius: 10px;
-  }
-  
-  .skill-progress-fill {
+}
+
+.skill-progress-fill {
     background: var(--text-gradient-green);
     height: 100%;
     border-radius: inherit;
-  }
+}
 
 /* Contact */
 .contact-form{
@@ -937,8 +945,19 @@ textarea.form-input::-webkit-resizer {
 /* Responsive larger than 450px screen */
 
 @media (min-width: 450px) {
-    /* Nothing */
+
+    .title{
+        right: -20px;
+    }
 }
+
+@media (max-width: 450px) {
+
+    .title{
+        right: -10px;
+    }
+}
+
 /* Responsive larger than 580px screen */
 
 @media (min-width: 580px){
@@ -1127,6 +1146,7 @@ textarea.form-input::-webkit-resizer {
         .form-btn ion-icon{
             font-size: 18px;
         }
+
 }
 
 /* Responsive larger than 768px screen */
@@ -1171,6 +1191,8 @@ textarea.form-input::-webkit-resizer {
         width: max-content;
         margin-left: auto;
     }
+
+
 }
 
 
@@ -1303,6 +1325,10 @@ textarea.form-input::-webkit-resizer {
         z-index: 1;
     }
 
+    .title{
+        right: 0px;
+    }
+
     .sidebar-info{
         flex-direction: column;
     }
@@ -1382,5 +1408,4 @@ textarea.form-input::-webkit-resizer {
         opacity: 0;
     }
 }
-
 
