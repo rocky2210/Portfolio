@@ -82,7 +82,7 @@ body {
                             <polygon
                                 transform="rotate(45 100 100)"
                                 stroke-width="1"
-                                stroke="hsl(138, 100%, 71%)"
+                                stroke="hsl(128, 100%, 68%)"
                                 fill="none"
                                 points="70,70 148,50 130,130 50,150"
                                 id="bounce"
@@ -90,7 +90,7 @@ body {
                             <polygon
                                 transform="rotate(45 100 100)"
                                 stroke-width="1"
-                                stroke="hsl(138, 100%, 71%)"
+                                stroke="hsl(128, 100%, 68%)"
                                 fill="none"
                                 points="70,70 148,50 130,130 50,150"
                                 id="bounce2"
@@ -118,7 +118,7 @@ body {
                                 transform="translate(20, 31)"
                                 stroke-width="2"
                                 stroke=""
-                                fill="hsl(138, 100%, 71%)"
+                                fill="hsl(128, 100%, 68%)"
                                 points="80,50 80,75 80,99 40,75"
                             ></polygon>
                             <polygon
@@ -130,19 +130,15 @@ body {
                             ></polygon>
                             <defs>
                                 <linearGradient y2="100%" x2="0%" y1="-17%" x1="10%" id="gradiente2">
-                                    <stop style="stop-color: hsla(138, 100%, 71%, 0)" offset="20%"></stop>
-                                    <stop
-                                        style="stop-color: hsla(138, 100%, 71%, 0.5); stop-opacity:1"
-                                        offset="100%"
-                                        id="animatedStop"
-                                    ></stop>
+                                    <stop style="stop-color: hsla(128, 100%, 68%, 0)" offset="20%"></stop>
+                                    <stop style="stop-color: hsla(128, 100%, 68%, 0.5); stop-opacity:1" offset="100%" id="animatedStop"></stop>
                                 </linearGradient>
                             </defs>
                             <polygon
                                 transform="rotate(180 100 100) translate(20, 20)"
                                 stroke-width="2"
                                 stroke=""
-                                fill="hsl(138, 100%, 71%)"
+                                fill="hsl(128, 100%, 68%)"
                                 points="80,50 80,75 80,99 40,75"
                             ></polygon>
                             <polygon
@@ -154,38 +150,34 @@ body {
                             ></polygon>
                             <defs>
                                 <linearGradient y2="100%" x2="10%" y1="0%" x1="0%" id="gradiente3">
-                                    <stop style="stop-color: hsla(138, 100%, 71%, 0)" offset="20%"></stop>
-                                    <stop
-                                        style="stop-color: hsla(138, 100%, 71%, 0.5); stop-opacity:1"
-                                        offset="100%"
-                                        id="animatedStop"
-                                    ></stop>
+                                    <stop style="stop-color: hsla(128, 100%, 68%, 0)" offset="20%"></stop>
+                                    <stop style="stop-color: hsla(128, 100%, 68%, 0.5); stop-opacity:1" offset="100%" id="animatedStop"></stop>
                                 </linearGradient>
                             </defs>
                             <polygon
-                            transform="rotate(45 100 100) translate(80, 95)"
-                            stroke-width="2"
-                            stroke=""
-                            fill="hsl(138, 100%, 71%)"
-                            points="5,0 5,5 0,5 0,0"
-                            id="particles"
-                          ></polygon>
-                          <polygon
-                            transform="rotate(45 100 100) translate(80, 55)"
-                            stroke-width="2"
-                            stroke=""
-                            fill="hsl(138, 100%, 71%)"
-                            points="6,0 6,6 0,6 0,0"
-                            id="particles"
-                          ></polygon>
-                          <polygon
-                            transform="rotate(45 100 100) translate(70, 80)"
-                            stroke-width="2"
-                            stroke=""
-                            fill="hsl(138, 100%, 71%)"
-                            points="2,0 2,2 0,2 0,0"
-                            id="particles"
-                          ></polygon>
+                                transform="rotate(45 100 100) translate(80, 95)"
+                                stroke-width="2"
+                                stroke=""
+                                fill="hsl(128, 100%, 68%)"
+                                points="5,0 5,5 0,5 0,0"
+                                id="particles"
+                            ></polygon>
+                            <polygon
+                                transform="rotate(45 100 100) translate(80, 55)"
+                                stroke-width="2"
+                                stroke=""
+                                fill="hsl(128, 100%, 68%)"
+                                points="6,0 6,6 0,6 0,0"
+                                id="particles"
+                            ></polygon>
+                            <polygon
+                                transform="rotate(45 100 100) translate(70, 80)"
+                                stroke-width="2"
+                                stroke=""
+                                fill="hsl(128, 100%, 68%)"
+                                points="2,0 2,2 0,2 0,0"
+                                id="particles"
+                            ></polygon>
                             <polygon
                                 stroke-width="2"
                                 stroke=""
@@ -201,6 +193,7 @@ body {
                             ></polygon>
                         </g>
                     </svg>
+                    
                     <p class="title">Python Programmer</p>
                 </div>
                 <button class="info-more-btn" data-sidebar-btn>
@@ -519,30 +512,30 @@ body {
         });
 
 
-        class ClickSpark extends HTMLElement {
-  constructor() {
+class ClickSpark extends HTMLElement {
+    constructor() {
     super();
     this.attachShadow({ mode: "open" });
-  }
+}
 
-  connectedCallback() {
+connectedCallback() {
     this.shadowRoot.innerHTML = this.createSpark();
     this.svg = this.shadowRoot.querySelector("svg");
     this._parent = this.parentNode;
     this._parent.addEventListener("click", this);
-  }
+}
 
-  disconnectedCallback() {
+disconnectedCallback() {
     this._parent.removeEventListener("click", this);
     delete this._parent;
-  }
+}
 
-  handleEvent(e) {
+handleEvent(e) {
     this.setSparkPosition(e);
     this.animateSpark();
-  }
+}
 
-  animateSpark() {
+animateSpark() {
     let sparks = [...this.svg.children];
     let size = parseInt(sparks[0].getAttribute("y1"));
     let offset = size / 2 + "px";
@@ -550,50 +543,50 @@ body {
     let keyframes = (i) => {
       let deg = `calc(${i} * (360deg / ${sparks.length}))`;
 
-      return [
+    return [
         {
           strokeDashoffset: size * 3,
-          transform: `rotate(${deg}) translateY(${offset})`
+            transform: `rotate(${deg}) translateY(${offset})`
         },
         {
-          strokeDashoffset: size,
-          transform: `rotate(${deg}) translateY(0)`
+            strokeDashoffset: size,
+            transform: `rotate(${deg}) translateY(0)`
         }
-      ];
+        ];
     };
 
     let options = {
-      duration: 660,
-      easing: "cubic-bezier(0.25, 1, 0.5, 1)",
-      fill: "forwards"
+        duration: 660,
+        easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+        fill: "forwards"
     };
 
     sparks.forEach((spark, i) => spark.animate(keyframes(i), options));
-  }
+}
 
-  setSparkPosition(e) {
+setSparkPosition(e) {
     this.style.left = e.pageX - this.clientWidth / 2 + "px";
     this.style.top = e.pageY - this.clientHeight / 2 + "px";
-  }
+}
 
-  createSpark() {
+createSpark() {
     return `
-      <style>
+        <style>
         :host {
-          position: absolute;
-          pointer-events: none;
-          z-index: 10;
+            position: absolute;
+            pointer-events: none;
+            z-index: 10;
         }
-      </style>
-      <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="hsl(128, 100%, 68%)" transform="rotate(-20)">
+        </style>
+        <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="hsl(128, 100%, 68%)" transform="rotate(-20)">
         ${Array.from(
-          { length: 8 },
-          (_) =>
+            { length: 8 },
+            (_) =>
             `<line x1="50" y1="30" x2="50" y2="4" stroke-dasharray="30" stroke-dashoffset="30" style="transform-origin: center" />`
         ).join("")}
-      </svg>
+        </svg>
     `;
-  }
+    }
 }
 
 customElements.define("click-spark", ClickSpark);

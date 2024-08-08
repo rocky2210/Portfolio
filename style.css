@@ -422,7 +422,7 @@ main{
 }
 
 /* Sidebar radial gradient */
-.sidebar{
+.sidebar, .about{
     background-image: radial-gradient(circle at 100% 0%,hsla(0,0%,100%,0.08) 10.5%,hsla(0,0%,100%,0) 10%),
     radial-gradient(circle at 100% 0%,hsla(0,0%,100%,0.08) 15.5%,hsla(0,0%,100%,0) 15%),
     radial-gradient(circle at 100% 0%,hsla(0,0%,100%,0.08) 20.5%,hsla(0,0%,100%,0) 20%);
