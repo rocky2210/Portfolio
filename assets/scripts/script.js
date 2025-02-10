@@ -16,20 +16,20 @@ const pages = document.querySelectorAll("[data-page]");
 
 
 // To add event to all nav link
-for (let i = 0; i < navLinks.length; i++) {
-    navLinks[i].addEventListener("click", function () {
-        for (let i = 0; i < pages.length; i++) {
-            if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-                pages[i].classList.add("active");
-                navLinks[i].classList.add("active");
-                window.scrollTo(0, 0);
-            } else {
-                pages[i].classList.remove("active");
-                navLinks[i].classList.remove("active");
-                }
-            }
-        });
-    }
+// for (let i = 0; i < navLinks.length; i++) {
+//     navLinks[i].addEventListener("click", function () {
+//         for (let i = 0; i < pages.length; i++) {
+//             if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+//                 pages[i].classList.add("active");
+//                 navLinks[i].classList.add("active");
+//                 window.scrollTo(0, 0);
+//             } else {
+//                 pages[i].classList.remove("active");
+//                 navLinks[i].classList.remove("active");
+//                 }
+//             }
+//         });
+//     }
 
 
 // Contact form
@@ -173,3 +173,5 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.overflow = 'auto'; // Enable scrolling
     }, 2000);
 });
+
+
