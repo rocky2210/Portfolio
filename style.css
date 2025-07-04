@@ -1411,8 +1411,6 @@ textarea.form-input::-webkit-resizer {
 
 
 
-/* Star effect */
-/* Starfall Effect */
 .starfall {
     position: fixed;
     top: 0;
@@ -1420,7 +1418,7 @@ textarea.form-input::-webkit-resizer {
     width: 100%;
     height: 100vh;
     pointer-events: none;
-    z-index: -2; /* Behind the content but above the background lines */
+    z-index: -2;
     overflow: hidden;
 }
 
@@ -1436,253 +1434,17 @@ textarea.form-input::-webkit-resizer {
     animation: starfall 5s linear infinite;
 }
 
-.starfall::before {
-    top: 10%;
-    left: 20%;
-    animation-delay: 0s;
-}
-
-.starfall::after {
-    top: 30%;
-    left: 60%;
-    animation-delay: 2s;
-}
-
-.starfall span:nth-child(1) {
-    top: 50%;
-    left: 80%;
-    animation-delay: 1s;
-}
-
-.starfall span:nth-child(2) {
-    top: 70%;
-    left: 40%;
-    animation-delay: 3s;
-}
-
-.starfall span:nth-child(3) {
-    top: 90%;
-    left: 10%;
-    animation-delay: 4s;
-}
+.starfall::before { top: 10%; left: 20%; animation-delay: 0s; }
+.starfall::after { top: 30%; left: 60%; animation-delay: 2s; }
+.starfall span:nth-child(1) { top: 50%; left: 80%; animation-delay: 1s; }
+.starfall span:nth-child(2) { top: 70%; left: 40%; animation-delay: 3s; }
+.starfall span:nth-child(3) { top: 90%; left: 10%; animation-delay: 4s; }
 
 @keyframes starfall {
-    0% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(100vw, 100vh);
-        opacity: 0;
-    }
+    0% { transform: translate(0, 0); opacity: 1; }
+    100% { transform: translate(100vw, 100vh); opacity: 0; }
 }
 
-
-
-/* Planets */
-/* Solar System */
-.solar-system {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 600px; /* Size of the solar system */
-    height: 600px;
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Behind content but above background */
-    pointer-events: none;
-}
-
-/* Sun */
-.sun {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle, #ffeb3b 20%, #ff9800 70%);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px rgba(255, 235, 59, 0.8);
-}
-
-/* Planet Styles */
-.planet {
-    position: absolute;
-    border-radius: 50%;
-    background-size: cover;
-    transform-origin: center center;
-}
-
-/* Orbiting Paths and Animations */
-.earth {
-    width: 40px;
-    height: 40px;
-    background: radial-gradient(circle, #1e90ff 20%, #87ceeb 70%);
-    top: 50%;
-    left: 50%;
-    animation: orbit 20s linear infinite;
-    transform: translate(-50%, -50%) rotate(0deg) translate(100px) rotate(0deg);
-}
-
-.mars {
-    width: 30px;
-    height: 30px;
-    background: radial-gradient(circle, #ff4500 20%, #d2691e 70%);
-    top: 50%;
-    left: 50%;
-    animation: orbit 25s linear infinite;
-    transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg);
-}
-
-.jupiter {
-    width: 60px;
-    height: 60px;
-    background: radial-gradient(circle, #ffdead 20%, #deb887 70%);
-    top: 50%;
-    left: 50%;
-    animation: orbit 30s linear infinite;
-    transform: translate(-50%, -50%) rotate(0deg) translate(200px) rotate(0deg);
-}
-
-.saturn {
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(circle, #f4a460 20%, #daa520 70%);
-    top: 50%;
-    left: 50%;
-    animation: orbit 35s linear infinite;
-    transform: translate(-50%, -50%) rotate(0deg) translate(250px) rotate(0deg);
-    position: relative;
-}
-
-.saturn::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -10px;
-    width: 70px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.5);
-    transform: rotate(45deg) translateY(-50%);
-    transform-origin: center;
-}
-
-/* Orbit Animation */
-@keyframes orbit {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg) translate(var(--orbit-radius, 100px)) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg) translate(var(--orbit-radius, 100px)) rotate(-360deg);
-    }
-}
-
-/* Planet Spin (Optional) */
-.planet {
-    animation: spin 10s linear infinite, orbit var(--orbit-speed) linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-
-/* Responsive */
-/* Responsive Adjustments */
-@media (max-width: 580px) {
-    /* Starfall */
-    .starfall::before,
-    .starfall::after,
-    .starfall span {
-        width: 1px;
-        height: 1px;
-        animation-duration: 3s;
-    }
-
-    /* Solar System */
-    .solar-system {
-        width: 300px;
-        height: 300px;
-    }
-
-    .sun {
-        width: 40px;
-        height: 40px;
-    }
-
-    .earth {
-        width: 20px;
-        height: 20px;
-        transform: translate(-50%, -50%) rotate(0deg) translate(50px) rotate(0deg);
-        animation: orbit 15s linear infinite;
-    }
-
-    .mars {
-        width: 15px;
-        height: 15px;
-        transform: translate(-50%, -50%) rotate(0deg) translate(75px) rotate(0deg);
-        animation: orbit 18s linear infinite;
-    }
-
-    .jupiter {
-        width: 30px;
-        height: 30px;
-        transform: translate(-50%, -50%) rotate(0deg) translate(100px) rotate(0deg);
-        animation: orbit 20s linear infinite;
-    }
-
-    .saturn {
-        width: 25px;
-        height: 25px;
-        transform: translate(-50%, -50%) rotate(0deg) translate(125px) rotate(0deg);
-        animation: orbit 22s linear infinite;
-    }
-
-    .saturn::after {
-        width: 35px;
-        left: -5px;
-    }
-
-    /* Blur Effect */
-    .sidebar, article {
-        backdrop-filter: blur(3px); /* Slightly less blur on mobile */
-        -webkit-backdrop-filter: blur(3px);
-    }
-}
-
-@media (min-width: 1250px) {
-    /* Solar System */
-    .solar-system {
-        width: 800px;
-        height: 800px;
-    }
-
-    .sun {
-        width: 100px;
-        height: 100px;
-    }
-
-    .earth {
-        transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg);
-    }
-
-    .mars {
-        transform: translate(-50%, -50%) rotate(0deg) translate(200px) rotate(0deg);
-    }
-
-    .jupiter {
-        transform: translate(-50%, -50%) rotate(0deg) translate(250px) rotate(0deg);
-    }
-
-    .saturn {
-        transform: translate(-50%, -50%) rotate(0deg) translate(300px) rotate(0deg);
-    }
-}
 
 
 .sidebar, article {
