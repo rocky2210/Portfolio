@@ -1397,3 +1397,42 @@ textarea.form-input::-webkit-resizer {
     backdrop-filter: blur(5px); /* Blur effect */
     -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
 }
+
+.profile-img-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--green-crayola);
+  box-shadow: var(--shadow-2);
+}
+
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--green-crayola);
+  box-shadow: var(--shadow-2);
+}
+
+
+/* ---------- Mobile & tablet fixes ---------- */
+@media (max-width: 1023.98px) {
+
+  .sidebar            { max-height: none; overflow: visible; }
+
+  .sidebar-info-more  { opacity: 1 !important; visibility: visible !important; }
+
+  .sidebar-info       { flex-direction: column; align-items: center; }
+
+  .title              { position: static; margin-top: .35rem; }
+
+  .contacts-list,
+  .social-list        { justify-content: center; }
+}
+
+.name {
+    color : var(--white-1)
+}

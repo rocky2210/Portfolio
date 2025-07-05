@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,61 +10,65 @@
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
 
     <!-- Animate Css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
-        html, body {
-    height: 100%;
-}
+        html,
+        body {
+            height: 100%;
+        }
 
-body {
-    min-height: 100%;
-}
+        body {
+            min-height: 100%;
+        }
+
         /* Bubble Loader */
-.loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Hide overflow only in the loader */
-}
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            /* Hide overflow only in the loader */
+        }
 
-@-webkit-keyframes move {
-    100% {
-        transform: translate3d(0, 0, -1000px);
-    }
-}
+        @-webkit-keyframes move {
+            100% {
+                transform: translate3d(0, 0, -1000px);
+            }
+        }
 
-@keyframes move {
-    100% {
-        transform: translate3d(0, 0, -1000px);
-    }
-}
+        @keyframes move {
+            100% {
+                transform: translate3d(0, 0, -1000px);
+            }
+        }
 
-.bubble-wrap {
-    width: 500px;
-    height: 500px;
-    transform-style: preserve-3d;
-    transform-origin: center center;
-    perspective: 600px;
-}
+        .bubble-wrap {
+            width: 500px;
+            height: 500px;
+            transform-style: preserve-3d;
+            transform-origin: center center;
+            perspective: 600px;
+        }
 
-.bubble {
-    position: absolute;
-    background: black;
-    opacity: 0.7;
-    border-radius: 50%;
-    -webkit-animation: move 3s infinite;
+        .bubble {
+            position: absolute;
+            background: black;
+            opacity: 0.7;
+            border-radius: 50%;
+            -webkit-animation: move 3s infinite;
             animation: move 3s infinite;
-}
+        }
 
-.quotes {display: none;}
-
+        .quotes {
+            display: none;
+        }
     </style>
     <!-- Custom css -->
     <link rel="stylesheet" href="style.css">
@@ -71,6 +76,7 @@ body {
 
 
 </head>
+
 <body>
     <div class="starfall">
         <div class="starfall">
@@ -88,20 +94,18 @@ body {
         <!-- Sidebar -->
         <aside class="sidebar" data-sidebar>
             <div class="sidebar-info">
-                <div class="info-content">
+                <!-- Profile Image -->
+                <img src="assets/images/dummy_image.jpeg" alt="Profile Picture" class="profile-img" />
                     <h1 class="name" title="Rocky">Rocky</h1>
-                    <br>
+                <div class="info-content">
+
+                    <!-- Titles under name -->
+                    <div class="title">
+                        <p class="quotes">Python Programmer</p>
+                        <p class="quotes">Web App Developer</p>
+                        <p class="quotes">Desktop App Developer</p>
+                    </div>
                 </div>
-                <div class="title">
-                    <p class="quotes">Python Programmer</p>
-                    <p class="quotes">Web App Developer</p>
-                    <p class="quotes">Desktop App Developer</p>
-                </div>
-                <button class="info-more-btn" data-sidebar-btn>
-                    <span>Show Contacts</span>
-                    <!-- down icon -->
-                    <ion-icon name="chevron-down" class="animate__animated animate__bounceIn animate__infinite"></ion-icon>
-                </button>
             </div>
 
             <!-- Mail -->
@@ -116,40 +120,39 @@ body {
                         </div>
                         <div class="contact-info">
                             <p class="contact-title">Email</p>
-                            <a href="mailto:rocky@gmail.com" class="contact-link">rockyrocky@gmail.com</a>
+                            <a href="mailto:rockyrocky@gmail.com" class="contact-link">rockyrocky@gmail.com</a>
                         </div>
                     </li>
                 </ul>
 
                 <!-- Social media -->
                 <div class="separator"></div>
-                    <ul class="social-list">
-                        <li class="social-item">
-                            <a href="#" class="social-link">
-                            <!-- logo -->
+                <ul class="social-list">
+                    <li class="social-item">
+                        <a href="#" class="social-link">
                             <ion-icon name="logo-codepen"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="social-item">
-                            <a href="#" class="social-link">
-                            <!-- logo -->
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="social-link">
                             <ion-icon name="logo-github"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="social-item">
-                            <a href="#" class="social-link">
-                            <!-- logo -->
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="social-link">
                             <ion-icon name="logo-linkedin"></ion-icon>
-                            </a>
-                        </li>
-                    </ul>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </aside>
 
+
+
         <!-- Main content -->
-            <div class="main-content">
-                <!-- Navbar -->
-                <!-- <nav class="navbar">
+        <div class="main-content">
+            <!-- Navbar -->
+            <!-- <nav class="navbar">
                     <ul class="navbar-list">
                         <li class="navbar-item">
                             <button class="navbar-link active" data-nav-link>About</button>
@@ -169,121 +172,130 @@ body {
                     </ul>
                 </nav> -->
 
-                <!-- About -->
-                <article class="about active" data-page="about">
-                    <header>
-                        <h2 class="h2 article-title">About me</h2>
-                    </header>
-                    <section class="about-text">
-                        <p>Hello! I'm Rocky, a passionate Software Engineer and a dedicated Full-Stack Web Developer. I have a Bachelor's degree in Computer Applications (BCA) </p>
+            <!-- About -->
+            <article class="about active" data-page="about">
+                <header>
+                    <h2 class="h2 article-title">About me</h2>
+                </header>
+                <section class="about-text">
+                    <p>Hello! I'm Rocky, a passionate Software Engineer and a dedicated Full-Stack Web Developer. I have
+                        a Bachelor's degree in Computer Applications (BCA) </p>
 
-                        <p>I have a strong foundation in Python, MySQL, Linux, Flask, and frontend development. Additionally, I am actively learning Django to develop and deploy full-stack web applications. My enthusiasm for programming extends beyond web development—I am also exploring computer networking, IoT, low-level OS concepts, and desktop application development.</p>
-                                            
-                        <p>I am self-motivated, love tackling complex problems, and constantly work on personal projects to improve my skills. I am eager to gain real-world experience and contribute to open-source projects in the future. My goal is to develop high-quality, reliable, and efficient software systems while continuously growing as a developer.</p> 
-                    </section>
+                    <p>I have a strong foundation in Python, MySQL, Linux, Flask, and frontend development.
+                        Additionally, I am actively learning Django to develop and deploy full-stack web applications.
+                        My enthusiasm for programming extends beyond web development—I am also exploring computer
+                        networking, IoT, low-level OS concepts, and desktop application development.</p>
 
-                    <!-- Services -->
-                    <section class="service">
-                        <h3 class="h3 service-title">What i'm doing</h3>
-                        <ul class="service-list">
-                            <li class="service-item">
-                                <div class="service-icon-box">
-                                    <img src="assets/images/web-development.svg" alt="design icon" width="40">
-                                </div>
-                                <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">Desktop Application</h4>
-                                    <p class="service-item-text">
-                                        Lorem ipsum dolor sit amet, consectetur 
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="service-item">
-                                <div class="service-icon-box">
-                                    <img src="assets/images/python.svg" alt="design icon" width="40">
-                                </div>
-                                <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">Web Application</h4>
-                                    <p class="service-item-text">
-                                        Lorem ipsum dolor sit amet, consectetur 
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="service-item">
-                                <div class="service-icon-box">
-                                    <img src="assets/images/android.svg" alt="design icon" width="40">
-                                </div>
-                                <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">App Development</h4>
-                                    <p class="service-item-text">
-                                        Lorem ipsum dolor sit amet, consectetur 
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="service-item">
-                                <div class="service-icon-box">
-                                    <img src="assets/images/IOT.svg" alt="design icon" width="40">
-                                </div>
-                                <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">IOT Development</h4>
-                                    <p class="service-item-text">
-                                        Lorem ipsum dolor sit amet, consectetur 
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </section>
+                    <p>I am self-motivated, love tackling complex problems, and constantly work on personal projects to
+                        improve my skills. I am eager to gain real-world experience and contribute to open-source
+                        projects in the future. My goal is to develop high-quality, reliable, and efficient software
+                        systems while continuously growing as a developer.</p>
+                </section>
+
+                <!-- Services -->
+                <section class="service">
+                    <h3 class="h3 service-title">What i'm doing</h3>
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <div class="service-icon-box">
+                                <img src="assets/images/web-development.svg" alt="design icon" width="40">
+                            </div>
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Desktop Application</h4>
+                                <p class="service-item-text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                </p>
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-icon-box">
+                                <img src="assets/images/python.svg" alt="design icon" width="40">
+                            </div>
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Web Application</h4>
+                                <p class="service-item-text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                </p>
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-icon-box">
+                                <img src="assets/images/android.svg" alt="design icon" width="40">
+                            </div>
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">App Development</h4>
+                                <p class="service-item-text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                </p>
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-icon-box">
+                                <img src="assets/images/IOT.svg" alt="design icon" width="40">
+                            </div>
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">IOT Development</h4>
+                                <p class="service-item-text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
             </article>
             <br><br>
 
-                <!-- Education -->
-                <article class="education active" data-page="education">
-                    <header>
-                        <h2 class="h2 article-title">Education</h2>
-                    </header>
-                    <section class="timeline">
-                        <div class="title-wrapper">
-                            <div class="icon-box">
-                                <ion-icon name="book-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3">Education</h3>
+            <!-- Education -->
+            <article class="education active" data-page="education">
+                <header>
+                    <h2 class="h2 article-title">Education</h2>
+                </header>
+                <section class="timeline">
+                    <div class="title-wrapper">
+                        <div class="icon-box">
+                            <ion-icon name="book-outline"></ion-icon>
                         </div>
+                        <h3 class="h3">Education</h3>
+                    </div>
 
-                        <ol class="timeline-list">
+                    <ol class="timeline-list">
 
-                            <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">Text</h4>
-                                <span>Year - Year</span>
-                                <p class="timeline-text">
-                                    Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                                    magni dolores
-                                    eos.
-                                </p>
-                            </li>
-                            <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">Text</h4>
-                                <span>Year - Year</span>
-                                <p class="timeline-text">
-                                    Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                                    magni dolores
-                                    eos.
-                                </p>
-                            </li>
-                        </ol>
-                    </section>
-                </article>
-                <br><br>
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">Text</h4>
+                            <span>Year - Year</span>
+                            <p class="timeline-text">
+                                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit,
+                                sed consequuntur
+                                magni dolores
+                                eos.
+                            </p>
+                        </li>
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">Text</h4>
+                            <span>Year - Year</span>
+                            <p class="timeline-text">
+                                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit,
+                                sed consequuntur
+                                magni dolores
+                                eos.
+                            </p>
+                        </li>
+                    </ol>
+                </section>
+            </article>
+            <br><br>
 
-                <!-- Projects -->
-                <article class="projects active" data-page="projects">
-                    <header>
-                        <h2 class="h2 article-title">Projects</h2>
-                    </header>
+            <!-- Projects -->
+            <article class="projects active" data-page="projects">
+                <header>
+                    <h2 class="h2 article-title">Projects</h2>
+                </header>
 
-                    <section class="projects-section">
-                        <ul class="project-list">
+                <section class="projects-section">
+                    <ul class="project-list">
 
-                            <li class="project-item active" >
-                                <a href="">
+                        <li class="project-item active">
+                            <a href="">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="logo-github"></ion-icon>
@@ -294,95 +306,98 @@ body {
                                 <h3 class="project-title">Project name</h3>
                                 <p class="project-category">project category</p>
                             </a>
-                            </li>
+                        </li>
 
-                        </ul>
-                    </section>
-                </article>
-                <br><br>
+                    </ul>
+                </section>
+            </article>
+            <br><br>
 
 
-                <!-- Skills -->
-                <article class="skills active" data-page="skills">
-                    <header>
-                        <h2 class="h2 article-title">Skills</h2>
-                    </header>
-                    <section class="skill">
-                        <h3 class="h3 skills-title">My skills</h3>
-                        <ul class="skills-list content-card">
-                            
-                            <li class="skills-item">
-                                <div class="title-wrapper">
-                                    <h5 class="h5">Text</h5>
-                                    <data value="80">80%</data>
-                                </div>
-                    
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 80%;"></div>
-                                </div>
-                            </li>
+            <!-- Skills -->
+            <article class="skills active" data-page="skills">
+                <header>
+                    <h2 class="h2 article-title">Skills</h2>
+                </header>
+                <section class="skill">
+                    <h3 class="h3 skills-title">My skills</h3>
+                    <ul class="skills-list content-card">
 
-                            <li class="skills-item">
-                                <div class="title-wrapper">
-                                    <h5 class="h5">Text</h5>
-                                    <data value="80">80%</data>
-                                </div>
-                    
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 80%;"></div>
-                                </div>
-                            </li>
-
-                            <li class="skills-item">
-                                <div class="title-wrapper">
-                                    <h5 class="h5">Text</h5>
-                                    <data value="80">80%</data>
-                                </div>
-                    
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 80%;"></div>
-                                </div>
-                            </li>
-
-                            <li class="skills-item">
-                                <div class="title-wrapper">
-                                    <h5 class="h5">Text</h5>
-                                    <data value="80">80%</data>
-                                </div>
-                    
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 80%;"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </section>
-                </article>
-                <br><br>
-
-                <!-- Contact -->
-                <article class="contact active" data-page="contact">
-                    <header>
-                        <h2 class="h2 article-title">Contact</h2>
-                    </header>
-
-                    <section class="contact-form">
-                        <h3 class="h3 form-title">Contact Form</h3>
-                        <form action="#" class="form" data-form>
-                            <div class="input-wrapper">
-                                <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-                                <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+                        <li class="skills-item">
+                            <div class="title-wrapper">
+                                <h5 class="h5">Text</h5>
+                                <data value="80">80%</data>
                             </div>
 
-                            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </li>
 
-                            <button class="form-btn" type="submit" disabled data-form-btn>
-                                <ion-icon name="paper-plane"></ion-icon>
-                                <span>Send Message</span>
-                            </button>
-                        </form>
-                    </section>
-                </article>
-            </div>
+                        <li class="skills-item">
+                            <div class="title-wrapper">
+                                <h5 class="h5">Text</h5>
+                                <data value="80">80%</data>
+                            </div>
+
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </li>
+
+                        <li class="skills-item">
+                            <div class="title-wrapper">
+                                <h5 class="h5">Text</h5>
+                                <data value="80">80%</data>
+                            </div>
+
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </li>
+
+                        <li class="skills-item">
+                            <div class="title-wrapper">
+                                <h5 class="h5">Text</h5>
+                                <data value="80">80%</data>
+                            </div>
+
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+            <br><br>
+
+            <!-- Contact -->
+            <article class="contact active" data-page="contact">
+                <header>
+                    <h2 class="h2 article-title">Contact</h2>
+                </header>
+
+                <section class="contact-form">
+                    <h3 class="h3 form-title">Contact Form</h3>
+                    <form action="#" class="form" data-form>
+                        <div class="input-wrapper">
+                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required
+                                data-form-input>
+                            <input type="email" name="email" class="form-input" placeholder="Email address" required
+                                data-form-input>
+                        </div>
+
+                        <textarea name="message" class="form-input" placeholder="Your Message" required
+                            data-form-input></textarea>
+
+                        <button class="form-btn" type="submit" disabled data-form-btn>
+                            <ion-icon name="paper-plane"></ion-icon>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </section>
+            </article>
+        </div>
     </main>
     <br><br>
 
@@ -399,10 +414,11 @@ body {
     <script>
     </script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
     <!-- Custom scripts -->
     <script src="assets/scripts/script.js"></script>
 </body>
+
 </html>
