@@ -81,14 +81,6 @@
             --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
         }
 
-        /* .service-item {
-            position: relative;
-            padding: 15px;
-            border: 0.5px solid var(--surface-3);
-            border-radius: 14px;
-            box-shadow: var(--shadow-2);
-            overflow: hidden;
-        } */
 
         .service-item::before {
             content: "";
@@ -153,9 +145,9 @@
             <span></span>
         </div>
     </div>
-    <div id="bubble-loader" class="loader">
+    <!-- <div id="bubble-loader" class="loader">
         <div class="bubble-wrap"></div>
-    </div>
+    </div> -->
     <!-- Main -->
     <main>
         <!-- Sidebar -->
@@ -252,7 +244,7 @@
                                 <img src="assets/images/web-development.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Desktop Application</h4>
+                                <h4 class="h4 service-item-title">Desktop Apps</h4>
                                 <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
                             </div>
                         </li>
@@ -262,7 +254,7 @@
                                 <img src="assets/images/python.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Web Application</h4>
+                                <h4 class="h4 service-item-title">Web Apps</h4>
                                 <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
                             </div>
                         </li>
@@ -272,7 +264,7 @@
                                 <img src="assets/images/android.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title">App Development</h4>
+                                <h4 class="h4 service-item-title">Mobile Apps</h4>
                                 <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
                             </div>
                         </li>
@@ -304,6 +296,11 @@
                         <h3 class="h3">Education</h3>
                     </div>
                     <ol class="timeline-list">
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">Text</h4>
+                            <span>Year - Year</span>
+                            <p class="timeline-text">Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur magni dolores eos.</p>
+                        </li>
                         <li class="timeline-item">
                             <h4 class="h4 timeline-item-title">Text</h4>
                             <span>Year - Year</span>
@@ -348,6 +345,49 @@
                 <header>
                     <h2 class="h2 article-title">Skills</h2>
                 </header>
+    <div class="scroll" style="--time:30s">
+        <div>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>ReactJS</span>
+            <span>Vue JS</span>
+            <span>Boostrap</span>
+            <span>Tailwind</span>
+            <span>Scss</span>
+        </div>
+        <div>
+            <img src="" alt="" srcset="">
+            <span>HTML </span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>ReactJS</span>
+            <span>Vue JS</span>
+            <span>Boostrap</span>
+            <span>Tailwind</span>
+            <span>Scss</span>
+        </div>
+    </div>
+    <div class="scroll" style="--time:25s">
+        <div>
+            <span>Django</span>
+            <span>Flask</span>
+            <span>MySQL</span>
+            <span>Mongodb</span>
+            <span>Postgresdb</span>
+            <span>REST API</span>
+        </div>
+        <div>
+            <span>Django</span>
+            <span>Flask</span>
+            <span>MySQL</span>
+            <span>Mongodb</span>
+            <span>Postgresdb</span>
+            <span>REST API</span>
+        </div>
+    </div>
+
+
                 <section class="skill">
                     <h3 class="h3 skills-title">My skills</h3>
                     <ul class="skills-list content-card">
@@ -381,7 +421,7 @@
                         <li class="skills-item">
                             <div class="title-wrapper">
                                 <h5 class="h5">Text</h5>
-                                <data value="80">80%</data>
+                                <data value="50">50%</data>
                             </div>
                             <div class="skill-progress-bg">
                                 <div class="skill-progress-fill" style="width: 80%;"></div>
@@ -522,6 +562,7 @@
                     overflow: hidden;
                     position: absolute;
                     inset: 0;
+                    border-radius: 10%;
                 }
             `;
 
