@@ -152,3 +152,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+function initSparkleAnimation(selector) {
+  const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+  const animate = star => {
+    star.style.left = `${rand(-10, 100)}%`;
+    star.style.top = `${rand(-40, 80)}%`;
+    star.style.animation = "none";
+    void star.offsetHeight; // trigger reflow
+    star.style.animation = "";
+  };
+
+  const container = document.querySelector(selector);
+  if (!container) return;
+
+  const stars = container.querySelectorAll('.magic-star');
+  let index = 0;
+  const interval = 1000;
+
+  for (const star of stars) {
+    setTimeout(() => {
+      animate(star);
+      setInterval(() => animate(star), interval);
+    }, index++ * (interval / 3));
+  }
+}
