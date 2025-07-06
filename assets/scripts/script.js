@@ -178,34 +178,26 @@ function initSparkleAnimation(selector) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Function to generate a random color in hex format
-    const getRandomColor = () => {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    };
 
-    // Select all spans in the scroll sections
-    const skillSpans = document.querySelectorAll('.scroll div span');
+const skillSpans = document.querySelectorAll('.scroll div span');
 
-    // Assign a random border color and glow effect to each span and handle hover
-    skillSpans.forEach(span => {
-        const randomColor = getRandomColor();
-        // Set default border and glow effect
-        span.style.border = `0.5px solid ${randomColor}`;
-        span.style.boxShadow = `0 0 2px ${randomColor}, 0 0 4px ${randomColor}`;
-        // Store the color in a data attribute for hover
-        span.dataset.borderColor = randomColor;
-        
-        span.addEventListener('mouseenter', () => {
-            span.style.backgroundColor = span.dataset.borderColor;
-        });
-        span.addEventListener('mouseleave', () => {
-            span.style.backgroundColor = '#333';
-        });
+skillSpans.forEach(span => {
+    // Add the shine class
+    span.classList.add('text-shine');
+
+    // Optional: Add soft border glow
+    span.style.border = `1px solid #666`;
+    span.style.padding = '6px 12px';
+    span.style.margin = '4px';
+    span.style.display = 'inline-block';
+    span.style.borderRadius = '6px';
+    // span.style.boxShadow = `0 0 6px rgba(255,255,255,0.1), 0 0 12px rgba(255,255,255,0.05)`;
+
+    // Optional hover (darken background)
+    span.addEventListener('mouseenter', () => {
+        span.style.backgroundColor = '#444';
+    });
+    span.addEventListener('mouseleave', () => {
+        span.style.backgroundColor = '#222';
     });
 });

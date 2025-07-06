@@ -703,7 +703,7 @@ main {
     display: inline-flex;
     margin: 10px;
     letter-spacing: 0.2em;
-    background: #333;
+    /* background: #333; */
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
@@ -1330,3 +1330,29 @@ textarea.form-input::-webkit-resizer {
     }
 }
 
+.text-shine {
+  color: #fff;
+  background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+  background-size: 200% auto;
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shiney 3s infinite linear;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes shiney {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
