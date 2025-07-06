@@ -189,13 +189,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return color;
     };
 
+    // Select all spans in the scroll sections
     const skillSpans = document.querySelectorAll('.scroll div span');
 
-    // Assign a random border color to each span and handle hover
+    // Assign a random border color and glow effect to each span and handle hover
     skillSpans.forEach(span => {
         const randomColor = getRandomColor();
-        // Set default border color
+        // Set default border and glow effect
         span.style.border = `0.5px solid ${randomColor}`;
+        span.style.boxShadow = `0 0 2px ${randomColor}, 0 0 4px ${randomColor}`;
         // Store the color in a data attribute for hover
         span.dataset.borderColor = randomColor;
         
