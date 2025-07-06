@@ -1740,3 +1740,25 @@ textarea.form-input::-webkit-resizer {
     .subtitle { bottom: 40px; font-size: var(--fs-7); }
     .glow-1, .glow-2, .glow-3 { width: 80px; height: 80px; }
 }
+
+
+mark {
+  -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+    animation: 1.5s highlight 1.5s 1 normal forwards;
+  background-color: none;
+  background: linear-gradient(90deg, var(--vegas-green) 50%, rgba(255, 255, 255, 0) 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+}
+
+@-webkit-keyframes highlight {
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes highlight {
+  to {
+    background-position: 0 0;
+  }
+}
