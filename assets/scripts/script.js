@@ -177,3 +177,33 @@ function initSparkleAnimation(selector) {
     }, index++ * (interval / 3));
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to generate a random color in hex format
+    const getRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    };
+
+    const skillSpans = document.querySelectorAll('.scroll div span');
+
+    // Assign a random border color to each span and handle hover
+    skillSpans.forEach(span => {
+        const randomColor = getRandomColor();
+        // Set default border color
+        span.style.border = `0.5px solid ${randomColor}`;
+        // Store the color in a data attribute for hover
+        span.dataset.borderColor = randomColor;
+        
+        span.addEventListener('mouseenter', () => {
+            span.style.backgroundColor = span.dataset.borderColor;
+        });
+        span.addEventListener('mouseleave', () => {
+            span.style.backgroundColor = '#333';
+        });
+    });
+});
