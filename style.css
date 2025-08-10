@@ -301,10 +301,6 @@ main {
     max-width: 1200px;
 }
 
-/* Remove extra space from <br> tags between sections */
-.main-content br {
-    display: none;
-}
 
 /* Sidebar */
 .sidebar {
