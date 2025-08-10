@@ -1,252 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-
-    <!-- Animate Css -->
+    <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="test.css">
     <style>
-        html,
-        body {
+        html, body {
             height: 100%;
-        }
-
-        body {
-            min-height: 100%;
-            background: var(--smoky-black);
-            color-scheme: dark only;
-            font-family: var(--font-ben), sans-serif;
-        }
-
-        /* Custom property */
-        :root {
-            /* Colors */
-            --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
-            --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
-            --bg-gradient-green: linear-gradient(to bottom right, hsl(108, 100%, 71%) 0%, hsla(128, 100%, 69%, 0) 50%);
-            --bg-gradient-green-2: linear-gradient(135deg, hsla(108, 100%, 71%, 0.251) 0%, hsla(128, 100%, 68%, 0) 59.86%), hsl(128, 100%, 13%);
-            --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
-            --text-gradient-green: linear-gradient(to right, hsl(108, 100%, 72%), hsl(128, 100%, 68%));
-            --jet: hsl(0, 0%, 22%);
-            --onyx: hsl(240, 1%, 17%);
-            --eerie-black-1: hsl(240, 2%, 13%);
-            --eerie-black-2: hsl(240, 2%, 12%);
-            --smoky-black: hsl(0, 0%, 7%);
-            --white-1: hsl(0, 0%, 100%);
-            --white-2: hsl(0, 0%, 98%);
-            --green-crayola: hsl(108, 100%, 72%);
-            --vegas-green: hsl(108, 54%, 58%);
-            --light-gray: hsl(0, 0%, 84%);
-            --light-gray-70: hsla(0, 0%, 84%, 0.7);
-            --bittersweet-shimmer: hsl(0, 43%, 51%);
-            --neon-blue: #00f0ff;
-            --neon-purple: #e100ff;
-            --neon-pink: #ff00cc;
-
-            /* Typography */
-            --font-ben: "JetBrains Mono", monospace;
-            --fs-1: 24px;
-            --fs-2: 18px;
-            --fs-3: 17px;
-            --fs-4: 16px;
-            --fs-5: 15px;
-            --fs-6: 14px;
-            --fs-7: 13px;
-            --fs-8: 11px;
-            --fw-300: 300;
-            --fw-400: 400;
-            --fw-500: 500;
-            --fw-600: 600;
-
-            /* Shadow */
-            --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-            --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-            --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-            --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-            --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
-            --glow-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-purple);
-
-            /* Transition */
-            --transition-1: 0.25s ease;
-            --transition-2: 0.5s ease-in-out;
-        }
-
-        /* Reset properties */
-        *, *::before, *::after {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            overflow-x: hidden;
         }
-
-        a { text-decoration: none; }
-        li { list-style-type: none; }
-        img, ion-icon, a, button, span { display: block; }
-        button {
-            font: inherit;
-            background: none;
-            border: none;
-            text-align: left;
-            cursor: pointer;
+        body {
+            min-height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
         }
-        input, textarea {
-            display: block;
-            width: 100%;
-            background: none;
-            font: inherit;
-        }
-        ::selection {
-            background-color: var(--green-crayola);
-            color: var(--smoky-black);
-        }
-        :focus { outline-color: var(--green-crayola); }
-
-        /* Background */
-        body::before {
-            --line: hsl(0 0% 95% / 0.25);
-            --size: 50px;
-            content: "";
-            height: 100vh;
-            width: 100vw;
-            position: fixed;
-            background: linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
-                        linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
-            mask: linear-gradient(-15deg, transparent 30%, white);
-            top: 0;
-            transform-style: flat;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* Reused style */
-        .sidebar, article {
-            background: rgba(35, 35, 45, 0.7);
-            border: 1px solid var(--jet);
-            border-radius: 20px;
-            padding: 15px;
-            box-shadow: var(--shadow-1);
-            z-index: 1;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        .separator {
-            width: 100%;
-            height: 1px;
-            background: var(--jet);
-            margin: 16px 0;
-        }
-
-        .h2, h3, h4, h5 {
-            color: var(--white-2);
-            text-transform: capitalize;
-        }
-
-        .h2 { font-size: var(--fs-1); }
-        .h3 { font-size: var(--fs-2); }
-        .h4 { font-size: var(--fs-3); }
-        .h5 { font-size: var(--fs-7); font-weight: var(--fw-500); }
-
-        .icon-box {
-            position: relative;
-            background: var(--border-gradient-onyx);
-            width: 30px;
-            height: 30px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 16px;
-            color: var(--green-crayola);
-            box-shadow: var(--shadow-1);
-            z-index: 1;
-        }
-
-        .icon-box::before {
-            content: "";
-            position: absolute;
-            inset: 1px;
-            background: var(--eerie-black-1);
-            border-radius: inherit;
-            z-index: -1;
-        }
-
-        .icon-box .ion-icon { --ionicon-stroke-width: 35px; }
-
-        article { display: none; }
-        article.active {
-            display: block;
-            animation: fade 0.5s ease backwards;
-        }
-
-        @keyframes fade {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .article-title {
-            position: relative;
-            padding-bottom: 7px;
-        }
-
-        .article-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 3px;
-            background: var(--text-gradient-green);
-            border-radius: 3px;
-        }
-
-        .has-scrollbar::-webkit-scrollbar {
-            width: 5px;
-            height: 5px;
-        }
-
-        .has-scrollbar::-webkit-scrollbar-track {
-            background: var(--onyx);
-            border-radius: 5px;
-        }
-
-        .has-scrollbar::-webkit-scrollbar-thumb {
-            background: var(--green-crayola);
-            border-radius: 5px;
-        }
-
-        .has-scrollbar::-webkit-scrollbar-button { width: 20px; }
-
-        .content-card {
-            position: relative;
-            background: var(--border-gradient-onyx);
-            padding: 15px;
-            padding-top: 45px;
-            border-radius: 14px;
-            box-shadow: var(--shadow-2);
-            cursor: pointer;
-            z-index: 1;
-        }
-
-        .content-card::before {
-            content: "";
-            position: absolute;
-            inset: 1px;
-            background: var(--bg-gradient-jet);
-            border-radius: inherit;
-            z-index: -1;
-        }
-
         /* Bubble Loader */
         .loader {
             position: fixed;
@@ -254,18 +30,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: black;
+            background: #0f172a;
             z-index: 9999;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
         }
-
         @keyframes move {
-            100% { transform: translate3d(0, 0, -1000px); }
+            100% {
+                transform: translate3d(0, 0, -1000px);
+            }
         }
-
         .bubble-wrap {
             width: 500px;
             height: 500px;
@@ -273,29 +49,26 @@
             transform-origin: center center;
             perspective: 600px;
         }
-
         .bubble {
             position: absolute;
-            background: black;
-            opacity: 0.7;
+            background: #00ffaa;
+            opacity: 0.8;
             border-radius: 50%;
             animation: move 3s infinite;
         }
-
-        .quotes { display: none; }
-
+        .quotes {
+            display: none;
+        }
         /* Pixel Animation Styles */
         :root {
             --space: 1rem;
-            --bg: #09090b;
-            --fg: #e3e3e3;
-            --surface-1: #101012;
-            --surface-2: #27272a;
-            --surface-3: #52525b;
+            --bg: #0f172a;
+            --fg: #e0e0e0;
+            --surface-1: #1e293b;
+            --surface-2: #334155;
             --ease-out: cubic-bezier(0.5, 1, 0.89, 1);
             --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
         }
-
         .service-item::before {
             content: "";
             position: absolute;
@@ -306,374 +79,50 @@
             transition: opacity 900ms var(--ease-out);
             z-index: 0;
         }
-
-        .service-item:hover::before,
-        .service-item:focus-within::before { opacity: 0; }
-
-        .service-item:hover .service-icon-box img,
-        .service-item:focus-within .service-icon-box img {
-            filter: brightness(1.2);
-            transition: filter 300ms var(--ease-in-out);
+        .service-item:hover::before {
+            opacity: 0.3;
         }
-
+        .service-item:hover .service-icon-box img {
+            filter: brightness(1.3);
+            transform: scale(1.1);
+            transition: all 300ms var(--ease-in-out);
+        }
         .service-icon-box, .service-content-box {
             position: relative;
             z-index: 1;
         }
-
-        /* Stats Section Styles */
-        .stats-section {
-            margin-bottom: 35px;
-        }
-
-        .stats-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .stat-card {
-            position: relative;
-            background: var(--border-gradient-onyx);
-            padding: 20px;
-            border-radius: 14px;
-            box-shadow: var(--shadow-2), var(--glow-shadow);
-            border: 1px solid var(--neon-blue);
-            overflow: hidden;
-            transition: transform 0.3s var(--ease-in-out), box-shadow 0.3s var(--ease-in-out);
-        }
-
-        .stat-card::before {
-            content: "";
-            position: absolute;
-            inset: 1px;
-            background: var(--bg-gradient-jet);
-            border-radius: inherit;
-            z-index: -1;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-purple);
-        }
-
-        .stat-title {
-            color: var(--neon-blue);
-            font-size: var(--fs-4);
-            font-weight: var(--fw-600);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .stat-value {
-            color: var(--white-1);
-            font-size: var(--fs-2);
-            font-weight: var(--fw-700);
-            margin-bottom: 15px;
-            text-shadow: 0 0 5px var(--neon-pink);
-        }
-
-        .stat-progress-bg {
-            background: var(--jet);
-            width: 100%;
-            height: 8px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .stat-progress-fill {
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-            height: 100%;
-            border-radius: inherit;
-            transition: width 0.5s var(--ease-in-out);
-        }
-
-        .stat-card:hover .stat-progress-fill {
-            filter: brightness(1.2);
-        }
-
-        .stat-glow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at top left, hsla(189, 100%, 50%, 0.2) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Starfall */
-        .starfall {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            pointer-events: none;
-            z-index: -2;
-            overflow: hidden;
-        }
-
-        .starfall::before,
-        .starfall::after,
-        .starfall span {
-            content: "";
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: hsl(0, 0%, 90%);
-            border-radius: 50%;
-            animation: starfall 5s linear infinite;
-        }
-
-        .starfall::before { top: 10%; left: 20%; animation-delay: 0s; }
-        .starfall::after { top: 30%; left: 60%; animation-delay: 2s; }
-        .starfall span:nth-child(1) { top: 50%; left: 80%; animation-delay: 1s; }
-        .starfall span:nth-child(2) { top: 70%; left: 40%; animation-delay: 3s; }
-        .starfall span:nth-child(3) { top: 90%; left: 10%; animation-delay: 4s; }
-
-        @keyframes starfall {
-            0% { transform: translate(0, 0); opacity: 1; }
-            100% { transform: translate(100vw, 100vh); opacity: 0; }
-        }
-
-        /* Magic text */
-        .magic {
-            position: relative;
-            display: inline-block;
-            background: linear-gradient(90deg, #e100ff, #7f00ff, #ff00cc);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: #fff;
-            animation: shimmer 3s infinite linear;
-        }
-
-        .magic-text { position: relative; z-index: 2; }
-
-        .magic-star {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            pointer-events: none;
-            z-index: 1;
-            animation: sparkle 1s infinite;
-        }
-
-        .magic-star svg {
-            fill: #ff00cc;
-            width: 100%;
-            height: 100%;
-        }
-
-        @keyframes sparkle {
-            0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
-            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
-            100% { opacity: 0; transform: scale(0.5) rotate(360deg); }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200%; }
-            100% { background-position: 200%; }
-        }
-
-        /* Responsive */
-        @media (min-width: 580px) {
-            :root {
-                --fs-1: 32px;
-                --fs-2: 24px;
-                --fs-3: 26px;
-                --fs-4: 18px;
-                --fs-6: 15px;
-                --fs-7: 15px;
-                --fs-8: 12px;
-            }
-
-            .sidebar, article {
-                width: 520px;
-                margin-inline: auto;
-                padding: 30px;
-            }
-
-            .article-title {
-                font-weight: var(--fw-600);
-                padding-bottom: 15px;
-            }
-
-            .article-title::after {
-                width: 40px;
-                height: 5px;
-            }
-
-            .icon-box {
-                width: 48px;
-                height: 48px;
-                border-radius: 12px;
-                font-size: 18px;
-            }
-
-            main {
-                margin-top: 60px;
-                margin-bottom: 100px;
-            }
-
-            .sidebar {
-                max-height: 700px;
-                margin-bottom: 10px;
-            }
-
-            .sidebar.active { max-height: 800px; }
-            .sidebar-info { gap: 25px; }
-            .info-content .name { margin-bottom: 15px; }
-            .info-content .title { padding: 5px 18px; }
-            .info-more-btn {
-                top: -30px;
-                right: -30px;
-                padding: 10px 15px;
-            }
-            .info-more-btn span {
-                display: block;
-                font-size: var(--fs-8);
-            }
-            .info-more-btn ion-icon { display: none; }
-            .separator { margin: 32px 0; }
-            .contacts-list { gap: 20px; }
-            .contact-info {
-                max-width: calc(100% - 64px);
-                width: calc(100% - 64px);
-            }
-
-            .stats-list { gap: 25px; }
-            .stat-card { padding: 25px; }
-        }
-
-        @media (min-width: 768px) {
-            .sidebar, article { width: 700px; }
-            .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
-            .contacts-list {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px 15px;
-            }
-            .stats-list { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-        }
-
-        @media (min-width: 1024px) {
-            :root {
-                --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
-                --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
-                --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
-            }
-
-            .sidebar, .article {
-                width: 950px;
-                box-shadow: var(--shadow-5);
-            }
-
-            main { margin-bottom: 60px; }
-            .main-content {
-                position: relative;
-                width: max-content;
-                margin: auto;
-            }
-
-            .stats-list { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-        }
-
-        @media (min-width: 1250px) {
-            body::-webkit-scrollbar { width: 20px; }
-            body::-webkit-scrollbar-track { background: var(--smoky-black); }
-            body::-webkit-scrollbar-thumb {
-                border: 5px solid var(--smoky-black);
-                background: hsla(0, 0%, 100%, 0.1);
-                border-radius: 20px;
-                box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-                            inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
-            }
-            body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
-            body::-webkit-scrollbar-button { height: 60px; }
-
-            .sidebar, article { width: auto; }
-            .sidebar { width: 280px; }
-            .article { min-height: 100%; }
-
-            main {
-                max-width: 1200px;
-                margin-inline: auto;
-                display: flex;
-                justify-content: center;
-                align-items: stretch;
-                gap: 0px;
-            }
-
-            .main-content {
-                min-height: 75%;
-                width: 75%;
-                margin: 0;
-            }
-
-            .sidebar {
-                position: sticky;
-                top: 60px;
-                max-height: max-content;
-                height: 100%;
-                margin-bottom: 0;
-                padding-top: 50px;
-                z-index: 1;
-            }
-
-            .sidebar-info { flex-direction: column; }
-            .info-content .name {
-                white-space: nowrap;
-                text-align: center;
-            }
-            .info-content .title { margin: auto; }
-            .info-more-btn { display: none; }
-            .sidebar-info-more {
-                opacity: 1;
-                visibility: visible;
-            }
-            .contacts-list { grid-template-columns: 1fr; }
-            .contact-info :is(.contact-link) {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                --fs-7: 14px;
-                font-weight: var(--fw-300);
-            }
-            .separator:last-of-type {
-                margin: 15px 0;
-                opacity: 0;
-            }
-            .social-list { justify-content: center; }
-        }
-
-        @media (max-width: 767.98px) {
-            .stats-list { grid-template-columns: 1fr; }
-        }
     </style>
-    <!-- Custom css -->
-    <link rel="stylesheet" href="test.css">
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             initSparkleAnimation(".magic");
         });
     </script>
 </head>
-
 <body>
     <div class="starfall">
         <span></span>
         <span></span>
         <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-
+    <div class="nebula-overlay"></div>
+    <div class="cube-3d cube-sidebar"></div>
+    <div class="cube-3d cube-about"></div>
+    <div id="bubble-loader" class="loader">
+        <div class="bubble-wrap"></div>
+    </div>
+    <!-- Main -->
     <main>
+        <!-- Sidebar -->
         <aside class="sidebar" data-sidebar>
             <div class="sidebar-info">
                 <img src="assets/images/profile.jpeg" alt="Rocky's profile picture" class="profile-img" />
                 <div class="info-content">
                     <h1 class="name" title="Rocky">Rocky</h1>
-                    <br>
                     <div class="title">
                         <p class="quotes">Python Programmer</p>
                         <p class="quotes">Web App Developer</p>
@@ -681,7 +130,6 @@
                     </div>
                 </div>
             </div>
-            <br>
             <div class="sidebar-info-more">
                 <div class="separator"></div>
                 <ul class="contacts-list">
@@ -715,8 +163,9 @@
                 </ul>
             </div>
         </aside>
-
+        <!-- Main content -->
         <div class="main-content">
+            <!-- About -->
             <article class="about active" data-page="about">
                 <header>
                     <h2 class="h2 article-title">About me</h2>
@@ -726,77 +175,125 @@
                         <span class="magic">
                             <span class="magic-star">
                                 <svg viewBox="0 0 512 512">
-                                    <path
-                                        d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+                                    <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
                                 </svg>
                             </span>
                             <span class="magic-star">
                                 <svg viewBox="0 0 512 512">
-                                    <path
-                                        d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+                                    <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
                                 </svg>
                             </span>
                             <span class="magic-star">
                                 <svg viewBox="0 0 512 512">
-                                    <path
-                                        d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+                                    <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
                                 </svg>
                             </span>
                             <span class="magic-text">Full-Stack Web Developer.</span>
                         </span>
                         I have a Bachelor's degree in Computer Applications (BCA)</p>
-                    <p>I have a strong foundation in Python, MySQL, Linux, Flask, and frontend development. Additionally, I am actively learning Django to develop and deploy full-stack web applications. My enthusiasm for programming extends beyond web development—I am also exploring computer networking, IoT, low-level OS concepts, and desktop application development.</p>
+                    <p>I have a strong foundation in <mark>Python, MySQL, Linux, Flask, and frontend development </mark>. Additionally, I am actively learning Django to develop and deploy full-stack web applications. My enthusiasm for programming extends beyond web development—I am also exploring <mark>computer networking, IoT, low-level OS concepts, and desktop application development.</mark></p>
                     <p>I am self-motivated, love tackling complex problems, and constantly work on personal projects to improve my skills. I am eager to gain real-world experience and contribute to open-source projects in the future. My goal is to develop high-quality, reliable, and efficient software systems while continuously growing as a developer.</p>
                 </section>
 
+            </article>
+            <article class="about active" data-page="about">
+                <header>
+                    <h2 class="h2 article-title">What I'm doing</h2>
+                </header>
                 <section class="service">
-                    <h3 class="h3 service-title">What I'm doing</h3>
                     <ul class="service-list">
                         <li class="service-item">
-                            <pixel-canvas data-gap="10" data-speed="25" data-colors="#e0f2fe, #7dd3fc, #0ea5e9" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <pixel-canvas data-gap="10" data-speed="25" data-colors="#60a5fa, #3b82f6, #2563eb" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
                             <div class="service-icon-box">
                                 <img src="assets/images/web-development.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
                                 <h4 class="h4 service-item-title">Desktop Apps</h4>
-                                <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
+                                <p class="service-item-text">Building robust desktop applications with modern frameworks.</p>
                             </div>
                         </li>
                         <li class="service-item">
-                            <pixel-canvas data-gap="3" data-speed="20" data-colors="#fef08a, #fde047, #eab308" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <pixel-canvas data-gap="3" data-speed="20" data-colors="#facc15, #eab308, #ca8a04" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
                             <div class="service-icon-box">
                                 <img src="assets/images/python.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
                                 <h4 class="h4 service-item-title">Web Apps</h4>
-                                <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
+                                <p class="service-item-text">Crafting dynamic and responsive web applications.</p>
                             </div>
                         </li>
                         <li class="service-item">
-                            <pixel-canvas data-gap="6" data-speed="80" data-colors="#fecdd3, #fda4af, #e11d48" data-no-focus style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <pixel-canvas data-gap="6" data-speed="80" data-colors="#fb7185, #f43f5e, #e11d48" data-no-focus style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
                             <div class="service-icon-box">
                                 <img src="assets/images/android.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
                                 <h4 class="h4 service-item-title">Mobile Apps</h4>
-                                <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
+                                <p class="service-item-text">Developing cross-platform mobile applications.</p>
                             </div>
                         </li>
                         <li class="service-item">
-                            <pixel-canvas data-gap="5" data-speed="30" data-colors="#d9f99d, #a3e635, #65a30d" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <pixel-canvas data-gap="5" data-speed="30" data-colors="#a3e635, #84cc16, #65a30d" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
                             <div class="service-icon-box">
                                 <img src="assets/images/IOT.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
                                 <h4 class="h4 service-item-title">IoT Development</h4>
-                                <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
+                                <p class="service-item-text">Creating innovative IoT solutions for smart devices.</p>
                             </div>
                         </li>
                     </ul>
                 </section>
             </article>
-            <br><br>
-
+            <article class="skills active" data-page="skills">
+                <header>
+                    <h2 class="h2 article-title">Tech Stack</h2>
+                </header>
+                <div class="scroll" style="--time:30s">
+                    <div>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>ReactJS</span>
+                        <span>Vue JS</span>
+                        <span>Bootstrap</span>
+                        <span>Tailwind</span>
+                        <span>AstroJS</span>
+                        <span>Scss</span>
+                    </div>
+                    <div>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>ReactJS</span>
+                        <span>Vue JS</span>
+                        <span>Bootstrap</span>
+                        <span>Tailwind</span>
+                        <span>AstroJS</span>
+                        <span>Scss</span>
+                    </div>
+                </div>
+                <div class="scroll" style="--time:25s">
+                    <div>
+                        <span>Django</span>
+                        <span>Flask</span>
+                        <span>MySQL</span>
+                        <span>MongoDB</span>
+                        <span>PostgreSQL</span>
+                        <span>Redis</span>
+                        <span>REST API</span>
+                    </div>
+                    <div>
+                        <span>Django</span>
+                        <span>Flask</span>
+                        <span>MySQL</span>
+                        <span>MongoDB</span>
+                        <span>PostgreSQL</span>
+                        <span>Redis</span>
+                        <span>REST API</span>
+                    </div>
+                </div>
+            </article>
             <article class="education active" data-page="education">
                 <header>
                     <h2 class="h2 article-title">Education</h2>
@@ -810,25 +307,23 @@
                     </div>
                     <ol class="timeline-list">
                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Text</h4>
-                            <span>Year - Year</span>
-                            <p class="timeline-text">Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur magni dolores eos.</p>
+                            <h4 class="h4 timeline-item-title">Bachelor's in Computer Applications</h4>
+                            <span>2019 - 2022</span>
+                            <p class="timeline-text">Completed a comprehensive program focusing on software development, database management, and web technologies.</p>
                         </li>
                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Text</h4>
-                            <span>Year - Year</span>
-                            <p class="timeline-text">Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur magni dolores eos.</p>
+                            <h4 class="h4 timeline-item-title">Online Certification in Python</h4>
+                            <span>2023</span>
+                            <p class="timeline-text">Earned a certification in advanced Python programming, covering data structures, algorithms, and web frameworks.</p>
                         </li>
                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Text</h4>
-                            <span>Year - Year</span>
-                            <p class="timeline-text">Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur magni dolores eos.</p>
+                            <h4 class="h4 timeline-item-title">IoT Development Course</h4>
+                            <span>2024</span>
+                            <p class="timeline-text">Studied IoT concepts, including sensor integration, networking, and embedded systems.</p>
                         </li>
                     </ol>
                 </section>
             </article>
-            <br><br>
-
             <article class="projects active" data-page="projects">
                 <header>
                     <h2 class="h2 article-title">Projects</h2>
@@ -836,78 +331,48 @@
                 <section class="projects-section">
                     <ul class="project-list">
                         <li class="project-item active">
-                            <a href="">
+                            <a href="#">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="logo-github"></ion-icon>
                                     </div>
                                     <img src="assets/images/dummy_image.jpeg" alt="website" loading="lazy">
                                 </figure>
-                                <h3 class="project-title">Project name</h3>
-                                <p class="project-category">project category</p>
+                                <h3 class="project-title">Portfolio Website</h3>
+                                <p class="project-category">Web Development</p>
                             </a>
                         </li>
                     </ul>
                 </section>
             </article>
-            <br><br>
-
             <article class="skills active" data-page="skills">
                 <header>
                     <h2 class="h2 article-title">Skills</h2>
                 </header>
-                <div class="scroll" style="--time:30s">
-                    <div>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>ReactJS</span>
-                        <span>Vue JS</span>
-                        <span>Boostrap</span>
-                        <span>Tailwind</span>
-                        <span>AstroJS</span>
-                        <span>Tailwind</span>
-                        <span>Scss</span>
-                    </div>
-                    <div>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>ReactJS</span>
-                        <span>Vue JS</span>
-                        <span>Boostrap</span>
-                        <span>Tailwind</span>
-                        <span>AstroJS</span>
-                        <span>Tailwind</span>
-                        <span>Scss</span>
-                    </div>
-                </div>
-                <div class="scroll" style="--time:25s">
-                    <div>
-                        <span>Django</span>
-                        <span>Flask</span>
-                        <span>MySQL</span>
-                        <span>Mongodb</span>
-                        <span>Postgresdb</span>
-                        <span>Redisdb</span>
-                        <span>REST API</span>
-                    </div>
-                    <div>
-                        <span>Django</span>
-                        <span>Flask</span>
-                        <span>MySQL</span>
-                        <span>Mongodb</span>
-                        <span>Postgresdb</span>
-                        <span>Redisdb</span>
-                        <span>REST API</span>
-                    </div>
-                </div>
                 <section class="skill">
                     <h3 class="h3 skills-title">My skills</h3>
                     <ul class="skills-list content-card">
                         <li class="skills-item">
                             <div class="title-wrapper">
-                                <h5 class="h5">Text</h5>
+                                <h5 class="h5">Python</h5>
+                                <data value="90">90%</data>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </li>
+                        <li class="skills-item">
+                            <div class="title-wrapper">
+                                <h5 class="h5">JavaScript</h5>
+                                <data value="85">85%</data>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </li>
+                        <li class="skills-item">
+                            <div class="title-wrapper">
+                                <h5 class="h5">MySQL</h5>
                                 <data value="80">80%</data>
                             </div>
                             <div class="skill-progress-bg">
@@ -916,56 +381,23 @@
                         </li>
                         <li class="skills-item">
                             <div class="title-wrapper">
-                                <h5 class="h5">Text</h5>
-                                <data value="80">80%</data>
+                                <h5 class="h5">Django</h5>
+                                <data value="70">70%</data>
                             </div>
                             <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 80%;"></div>
-                            </div>
-                        </li>
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Text</h5>
-                                <data value="80">80%</data>
-                            </div>
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 80%;"></div>
-                            </div>
-                        </li>
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Text</h5>
-                                <data value="50">50%</data>
-                            </div>
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 50%;"></div>
+                                <div class="skill-progress-fill" style="width: 70%;"></div>
                             </div>
                         </li>
                     </ul>
                 </section>
             </article>
-            <br><br>
-
-<section class="solo-notification">
-  <div class="notification-card">
-    <div class="notification-header">
-      <div class="icon">!</div>
-      <div class="title">NOTIFICATION</div>
-    </div>
-    <p class="message">
-      Congratulations on becoming a <span class="highlight">Player.</span>
-    </p>
-  </div>
-</section>
-
-
             <article class="contact active" data-page="contact">
                 <header>
                     <h2 class="h2 article-title">Contact</h2>
                 </header>
                 <section class="contact-form">
                     <h3 class="h3 form-title">Contact Form</h3>
-                    <form action="#" class="form" data-form>
+                    <div class="form" data-form>
                         <div class="input-wrapper">
                             <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
                             <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
@@ -975,20 +407,18 @@
                             <ion-icon name="paper-plane"></ion-icon>
                             <span>Send Message</span>
                         </button>
-                    </form>
+                    </div>
                 </section>
             </article>
         </div>
     </main>
-    <br><br>
-
     <a></a>
     <click-spark></click-spark>
-
+    <!-- Scripts -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <!-- Pixel Canvas Script -->
     <script>
         class Pixel {
             constructor(canvas, context, x, y, color, speed, delay) {
@@ -1011,17 +441,14 @@
                 this.isReverse = false;
                 this.isShimmer = false;
             }
-
             getRandomValue(min, max) {
                 return Math.random() * (max - min) + min;
             }
-
             draw() {
                 const centerOffset = this.maxSizeInteger * 0.5 - this.size * 0.5;
                 this.ctx.fillStyle = this.color;
                 this.ctx.fillRect(this.x + centerOffset, this.y + centerOffset, this.size, this.size);
             }
-
             appear() {
                 this.isIdle = false;
                 if (this.counter <= this.delay) {
@@ -1038,7 +465,6 @@
                 }
                 this.draw();
             }
-
             disappear() {
                 this.isShimmer = false;
                 this.counter = 0;
@@ -1050,7 +476,6 @@
                 }
                 this.draw();
             }
-
             shimmer() {
                 if (this.size >= this.maxSize) {
                     this.isReverse = true;
@@ -1064,14 +489,12 @@
                 }
             }
         }
-
         class PixelCanvas extends HTMLElement {
             static register(tag = "pixel-canvas") {
                 if ("customElements" in window) {
                     customElements.define(tag, this);
                 }
             }
-
             static css = `
                 :host {
                     display: grid;
@@ -1083,11 +506,9 @@
                     border-radius: 10%;
                 }
             `;
-
             get colors() {
                 return this.dataset.colors?.split(",") || ["#f8fafc", "#f1f5f9", "#cbd5e1"];
             }
-
             get gap() {
                 const value = this.dataset.gap || 5;
                 const min = 4;
@@ -1096,7 +517,6 @@
                 else if (value >= max) return max;
                 else return parseInt(value);
             }
-
             get speed() {
                 const value = this.dataset.speed || 35;
                 const min = 0;
@@ -1106,11 +526,9 @@
                 else if (value >= max) return max * throttle;
                 else return parseInt(value) * throttle;
             }
-
             get noFocus() {
                 return this.hasAttribute("data-no-focus");
             }
-
             connectedCallback() {
                 const canvas = document.createElement("canvas");
                 const sheet = new CSSStyleSheet();
@@ -1134,7 +552,6 @@
                     this._parent.addEventListener("focusout", this);
                 }
             }
-
             disconnectedCallback() {
                 this.resizeObserver.disconnect();
                 this._parent.removeEventListener("mouseenter", this);
@@ -1145,29 +562,24 @@
                 }
                 delete this._parent;
             }
-
             handleEvent(event) {
                 this[`on${event.type}`](event);
             }
-
             onmouseenter() {
                 this.style.opacity = "1";
                 this.handleAnimation("appear");
             }
-
             onmouseleave() {
                 this.handleAnimation("disappear");
                 setTimeout(() => {
                     if (!this._parent.matches(':hover')) this.style.opacity = "0";
                 }, 300);
             }
-
             onfocusin(e) {
                 if (e.currentTarget.contains(e.relatedTarget)) return;
                 this.style.opacity = "1";
                 this.handleAnimation("appear");
             }
-
             onfocusout(e) {
                 if (e.currentTarget.contains(e.relatedTarget)) return;
                 this.handleAnimation("disappear");
@@ -1175,12 +587,10 @@
                     if (!this._parent.matches(':focus-within')) this.style.opacity = "0";
                 }, 300);
             }
-
             handleAnimation(name) {
                 cancelAnimationFrame(this.animation);
                 this.animation = this.animate(name);
             }
-
             init() {
                 const rect = this.getBoundingClientRect();
                 const width = Math.floor(rect.width);
@@ -1192,13 +602,11 @@
                 this.canvas.style.height = `${height}px`;
                 this.createPixels();
             }
-
             getDistanceToCanvasCenter(x, y) {
                 const dx = x - this.canvas.width / 2;
                 const dy = y - this.canvas.height / 2;
                 return Math.sqrt(dx * dx + dy * dy);
             }
-
             createPixels() {
                 for (let x = 0; x < this.canvas.width; x += this.gap) {
                     for (let y = 0; y < this.canvas.height; y += this.gap) {
@@ -1208,7 +616,6 @@
                     }
                 }
             }
-
             animate(fnName) {
                 this.animation = requestAnimationFrame(() => this.animate(fnName));
                 const timeNow = performance.now();
@@ -1224,10 +631,8 @@
                 }
             }
         }
-
         PixelCanvas.register();
     </script>
-    <script src="assets/scripts/script.js"></script>
+    <script src="test.js"></script>
 </body>
-
 </html>

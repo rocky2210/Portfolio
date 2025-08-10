@@ -129,6 +129,7 @@
     </style>
     <!-- Custom css -->
     <link rel="stylesheet" href="style.css">
+
     <script>
   document.addEventListener("DOMContentLoaded", () => {
     initSparkleAnimation(".magic");
@@ -143,12 +144,19 @@
             <span></span>
             <span></span>
             <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
+    <div class="nebula-overlay"></div>
     <!-- <div id="bubble-loader" class="loader">
         <div class="bubble-wrap"></div>
     </div> -->
     <!-- Main -->
+
+    <!---->
     <main>
         <!-- Sidebar -->
         <aside class="sidebar" data-sidebar>
@@ -247,45 +255,67 @@
                     <!-- <h3 class="h3 service-title">What I'm doing</h3> -->
                     <ul class="service-list">
                         <li class="service-item">
-                            <pixel-canvas data-gap="10" data-speed="25" data-colors="#e0f2fe, #7dd3fc, #0ea5e9" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <pixel-canvas data-gap="4" data-speed="25" data-colors="#e0f2fe, #7dd3fc, #0ea5e9" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
                             <div class="service-icon-box">
                                 <img src="assets/images/web-development.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
                                 <h4 class="h4 service-item-title">Desktop Apps</h4>
-                                <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
+                                <p class="service-item-text">Crafting robust and efficient desktop applications for Windows, macOS, and Linux, focusing on high performance and user-friendly design.</p>
                             </div>
                         </li>
                         <li class="service-item">
-                            <pixel-canvas data-gap="3" data-speed="20" data-colors="#fef08a, #fde047, #eab308" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <pixel-canvas data-gap="4" data-speed="20" data-colors="#fef08a, #fde047, #eab308" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
                             <div class="service-icon-box">
                                 <img src="assets/images/python.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
                                 <h4 class="h4 service-item-title">Web Apps</h4>
-                                <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
+                                <p class="service-item-text">Building responsive, scalable, and SEO-friendly web applications using modern frameworks and clean code practices.</p>
                             </div>
                         </li>
                         <li class="service-item">
-                            <pixel-canvas data-gap="6" data-speed="80" data-colors="#fecdd3, #fda4af, #e11d48" data-no-focus style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <pixel-canvas data-gap="4" data-speed="80" data-colors="#fecdd3, #fda4af, #e11d48" data-no-focus style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
                             <div class="service-icon-box">
                                 <img src="assets/images/android.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
                                 <h4 class="h4 service-item-title">Mobile Apps</h4>
-                                <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
+                                <p class="service-item-text">Creating intuitive and visually appealing Android and iOS apps with seamless cross-platform performance.</p>
                             </div>
                         </li>
                         <li class="service-item">
-                            <pixel-canvas data-gap="5" data-speed="30" data-colors="#d9f99d, #a3e635, #65a30d" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <pixel-canvas data-gap="4" data-speed="30" data-colors="#d9f99d, #a3e635, #65a30d" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
                             <div class="service-icon-box">
                                 <img src="assets/images/IOT.svg" alt="design icon" width="40">
                             </div>
                             <div class="service-content-box">
                                 <h4 class="h4 service-item-title">IoT Development</h4>
-                                <p class="service-item-text">Lorem ipsum dolor sit amet, consectetur</p>
+                                <p class="service-item-text">Designing connected solutions for smart devices, integrating sensors, cloud services, and real-time data processing.</p>
                             </div>
                         </li>
+                        <li class="service-item">
+                            <pixel-canvas data-gap="4" data-speed="30" data-colors="#c3e8ff, #7c3aed, #4c1d95" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <div class="service-icon-box">
+                                <img src="assets/images/cli.svg" alt="design icon" width="40">
+                            </div>
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">CLI Apps</h4>
+                                <p class="service-item-text">Developing powerful command-line tools to automate workflows, process data, and boost productivity.</p>
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <pixel-canvas data-gap="4" data-speed="30" data-colors="#fed7aa, #f97316, #c2410c" style="position: absolute; inset: 0; opacity: 0; transition: opacity 300ms ease;"></pixel-canvas>
+                            <div class="service-icon-box">
+                                <img src="assets/images/api.svg" alt="design icon" width="40">
+                            </div>
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">API Development</h4>
+                                <p class="service-item-text">Secure and scalable REST/GraphQL APIs with clear documentation and fast response times.</p>
+                            </div>
+                        </li>
+
+                        
                     </ul>
                 </section>
             </article>
@@ -456,76 +486,6 @@
             </article>
             <br>
 
-<!-- Stats -->
-<article class="status active" data-page="status">
-    <header>
-        <h2 class="h2 article-title">Stats</h2>
-    </header>
-    <section class="status-section">
-        <ul class="status-list">
-            <li class="status-item active">
-                <div class="container noselect">
-                    <div class="canvas">
-                        <div class="tracker tr-1"></div>
-                        <div class="tracker tr-2"></div>
-                        <div class="tracker tr-3"></div>
-                        <div class="tracker tr-4"></div>
-                        <div class="tracker tr-5"></div>
-                        <div class="tracker tr-6"></div>
-                        <div class="tracker tr-7"></div>
-                        <div class="tracker tr-8"></div>
-                        <div class="tracker tr-9"></div>
-                        <div class="tracker tr-10"></div>
-                        <div class="tracker tr-11"></div>
-                        <div class="tracker tr-12"></div>
-                        <div class="tracker tr-13"></div>
-                        <div class="tracker tr-14"></div>
-                        <div class="tracker tr-15"></div>
-                        <div class="tracker tr-16"></div>
-                        <div class="tracker tr-17"></div>
-                        <div class="tracker tr-18"></div>
-                        <div class="tracker tr-19"></div>
-                        <div class="tracker tr-20"></div>
-                        <div class="tracker tr-21"></div>
-                        <div class="tracker tr-22"></div>
-                        <div class="tracker tr-23"></div>
-                        <div class="tracker tr-24"></div>
-                        <div class="tracker tr-25"></div>
-                        <div id="card">
-                            <div class="card-content">
-                                <div class="card-glare"></div>
-                                <div class="cyber-lines">
-                                    <span></span><span></span><span></span><span></span>
-                                </div>
-                                <p id="prompt">6+</p>
-                                <div class="stats-title">PROJECT<br />STATS</div>
-                                <div class="glowing-elements">
-                                    <div class="glow-1"></div>
-                                    <div class="glow-2"></div>
-                                    <div class="glow-3"></div>
-                                </div>
-                                <div class="subtitle">
-                                    <span>I'M</span>
-                                    <span class="highlight">NOT DONE YET !</span>
-                                </div>
-                                <div class="card-particles">
-                                    <span></span><span></span><span></span>
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <div class="corner-elements">
-                                    <span></span><span></span><span></span><span></span>
-                                </div>
-                                <div class="scan-line"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </section>
-</article>
-
-<br>
             <!-- Contact -->
             <article class="contact active" data-page="contact">
                 <header>
@@ -656,7 +616,7 @@
                     overflow: hidden;
                     position: absolute;
                     inset: 0;
-                    border-radius: 10%;
+                    border-radius: 8%;
                 }
             `;
 
