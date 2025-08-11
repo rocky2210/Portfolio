@@ -135,8 +135,10 @@ body::before {
     background: radial-gradient(ellipse at center, rgba(52, 211, 153, 0.2) 0%, rgba(22, 33, 62, 0.1) 70%, transparent 100%);
     pointer-events: none;
     z-index: -2;
-    opacity: 0.4;
+    opacity: 0.6;
 }
+
+
 
 /* Reused style */
 .sidebar, article {
@@ -846,6 +848,28 @@ textarea.form-input::-webkit-resizer {
     background: var(--bg-gradient-jet);
 }
 
+
+
+/* Responsive */
+@media (max-width: 580px) {
+    main {
+        margin: 2px; 
+        padding: 0 10px; 
+        max-width: calc(100% - 5px);
+    }
+
+    .sidebar, article {
+        margin: 10px; 
+        padding: 15px; 
+        max-width: calc(100% - 5px); 
+    }
+
+    .scroll {
+        max-width: calc(100% - 30px);
+        margin: 0 auto;
+    }
+}
+
 /* Responsive */
 @media (min-width: 580px) {
     :root {
@@ -916,6 +940,8 @@ textarea.form-input::-webkit-resizer {
     }
 }
 
+
+
 .magic {
     position: relative;
     display: inline-block;
@@ -972,12 +998,18 @@ textarea.form-input::-webkit-resizer {
 
 .text-shine {
     color: #fff;
-    background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
-    background-size: 200% auto;
-    background-position: 0;
+    background: linear-gradient(
+        to right,
+        #9f9f9f 0%,
+        #fff 20%, /* Wider spread for smoother shine */
+        #868686 40%,
+        #9f9f9f 60%
+    );
+    background-size: 200% auto; /* Keep background size for smooth looping */
+    background-position: 0 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shiney 3s infinite linear;
+    animation: shiney 2s cubic-bezier(0.4, 0, 0.2, 1) infinite; /* Shorter duration, smoother easing */
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
@@ -987,14 +1019,16 @@ textarea.form-input::-webkit-resizer {
 
 @keyframes shiney {
     0% {
-        background-position: 0;
-    }
-    60% {
-        background-position: 180px;
+        background-position: 200% 0; /* Start from the right */
     }
     100% {
-        background-position: 180px;
+        background-position: 0 0; /* Move to the left for continuous flow */
     }
+}
+
+.text-shine:hover {
+    border-color: #888; /* Slightly lighter border on hover */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Subtle glow effect */
 }
 
 mark {
@@ -1086,3 +1120,61 @@ mark {
 .name {
     color: var(--white-1);
 }
+
+.social-link {
+    transition: transform 0.3s var(--ease-in-out), box-shadow 0.3s var(--ease-in-out);
+    border-radius: 50%;
+
+}
+.social-link:hover {
+    transform: scale(1.3); /* Slightly larger on hover */
+    box-shadow: 0 0 10px var(--green-crayola), 0 0 20px var(--green-crayola); /* Glow effect */
+    border-radius: 50%;
+}
+.social-link:hover ion-icon {
+    color: var(--white-1); /* Existing hover color */
+    transform: none; /* Override existing scale to avoid conflict */
+    border-radius: 50%;
+
+}
+
+
+.quotes {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--green-crayola); /* Cursor effect */
+    animation: typing 2s steps(20, end), blink 0.5s step-end infinite;
+    margin: 2px 0;
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--green-crayola);
+    }
+}
+
+
+
+
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s var(--ease-in-out), transform 0.5s var(--ease-in-out);
+}
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+

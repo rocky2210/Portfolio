@@ -109,21 +109,23 @@ customElements.define("click-spark", ClickSpark);
 
 
 
-// Fade in and fade out title
 (function() {
+    const quotes = document.querySelectorAll(".quotes");
+    let quoteIndex = -1;
 
-var quotes = $(".quotes");
-var quoteIndex = -1;
-
-function showNextQuote() {
-++quoteIndex;
-quotes.eq(quoteIndex % quotes.length)
-.fadeIn(1000)
-.delay(500)
-.fadeOut(1000, showNextQuote);
-}
-showNextQuote();
-
+    function showNextQuote() {
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+        quotes.forEach((quote, index) => {
+            quote.style.display = index === quoteIndex ? "inline-block" : "none";
+            if (index === quoteIndex) {
+                quote.style.animation = "none"; // Reset animation
+                void quote.offsetWidth; // Trigger reflow
+                quote.style.animation = "typing 2s steps(20, end), blink 0.5s step-end infinite";
+            }
+        });
+        setTimeout(showNextQuote, 4000); // Adjust timing for next quote
+    }
+    showNextQuote();
 })();
 
 
@@ -178,26 +180,39 @@ function initSparkleAnimation(selector) {
   }
 }
 
-
 const skillSpans = document.querySelectorAll('.scroll div span');
 
 skillSpans.forEach(span => {
     // Add the shine class
     span.classList.add('text-shine');
 
-    // Optional: Add soft border glow
+    // Apply consistent styling
     span.style.border = `1px solid #666`;
     span.style.padding = '6px 12px';
     span.style.margin = '4px';
     span.style.display = 'inline-block';
     span.style.borderRadius = '6px';
-    // span.style.boxShadow = `0 0 6px rgba(255,255,255,0.1), 0 0 12px rgba(255,255,255,0.05)`;
+});
 
-    // Optional hover (darken background)
-    span.addEventListener('mouseenter', () => {
-        span.style.backgroundColor = '#444';
-    });
-    span.addEventListener('mouseleave', () => {
-        span.style.backgroundColor = '#222';
-    });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const timelineItems = document.querySelectorAll(".timeline-item");
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.2 // Trigger when 20% of item is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    timelineItems.forEach(item => observer.observe(item));
 });
