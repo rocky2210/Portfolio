@@ -1,218 +1,62 @@
-// Js
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
+const tabJumpButtons = document.querySelectorAll("[data-jump-tab]");
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+const setActiveTab = (tabName) => {
+  tabButtons.forEach((btn) => btn.classList.remove("active"));
+  tabContents.forEach((content) => content.classList.remove("active"));
 
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
+  const activeButton = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  const activeContent = document.getElementById(`tab-${tabName}`);
 
-const pages = document.querySelectorAll("[data-page]");
+  if (activeButton && activeContent) {
+    activeButton.classList.add("active");
+    activeContent.classList.add("active");
+  }
+};
 
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const tabName = button.dataset.tab;
+    setActiveTab(tabName);
+    document.getElementById(`tab-${tabName}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
 
-// Contact form
+tabJumpButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const tabName = button.dataset.jumpTab;
+    setActiveTab(tabName);
+    document.getElementById(`tab-${tabName}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
-for (let i = 0; i < formInputs.length; i++) {
-    formInputs[i].addEventListener("input", function () {
-
-      // check form validation
-    if (form.checkValidity()) {
+if (form && formBtn) {
+  formInputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      if (form.checkValidity()) {
         formBtn.removeAttribute("disabled");
-    } else {
+      } else {
         formBtn.setAttribute("disabled", "");
-    }
+      }
     });
+  });
 }
 
-// Mouse click spark animation
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id.replace("tab-", "");
+        setActiveTab(sectionId);
+      }
+    });
+  },
+  { threshold: 0.55 }
+);
 
-class ClickSpark extends HTMLElement {
-    constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-}
-
-connectedCallback() {
-    this.shadowRoot.innerHTML = this.createSpark();
-    this.svg = this.shadowRoot.querySelector("svg");
-    this._parent = this.parentNode;
-    this._parent.addEventListener("click", this);
-}
-
-disconnectedCallback() {
-    this._parent.removeEventListener("click", this);
-    delete this._parent;
-}
-
-handleEvent(e) {
-    this.setSparkPosition(e);
-    this.animateSpark();
-}
-
-animateSpark() {
-    let sparks = [...this.svg.children];
-    let size = parseInt(sparks[0].getAttribute("y1"));
-    let offset = size / 2 + "px";
-
-    let keyframes = (i) => {
-      let deg = `calc(${i} * (360deg / ${sparks.length}))`;
-
-    return [
-        {
-          strokeDashoffset: size * 3,
-            transform: `rotate(${deg}) translateY(${offset})`
-        },
-        {
-            strokeDashoffset: size,
-            transform: `rotate(${deg}) translateY(0)`
-        }
-        ];
-    };
-
-    let options = {
-        duration: 660,
-        easing: "cubic-bezier(0.25, 1, 0.5, 1)",
-        fill: "forwards"
-    };
-
-    sparks.forEach((spark, i) => spark.animate(keyframes(i), options));
-}
-
-setSparkPosition(e) {
-    this.style.left = e.pageX - this.clientWidth / 2 + "px";
-    this.style.top = e.pageY - this.clientHeight / 2 + "px";
-}
-
-createSpark() {
-    return `
-        <style>
-        :host {
-            position: absolute;
-            pointer-events: none;
-            z-index: 10;
-        }
-        </style>
-        <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="hsl(128, 100%, 68%)" transform="rotate(-20)">
-        ${Array.from(
-            { length: 8 },
-            (_) =>
-            `<line x1="50" y1="30" x2="50" y2="4" stroke-dasharray="30" stroke-dashoffset="30" style="transform-origin: center" />`
-        ).join("")}
-        </svg>
-    `;
-    }
-}
-
-customElements.define("click-spark", ClickSpark);
-
-
-
-(function() {
-    const quotes = document.querySelectorAll(".quotes");
-    let quoteIndex = -1;
-
-    function showNextQuote() {
-        quoteIndex = (quoteIndex + 1) % quotes.length;
-        quotes.forEach((quote, index) => {
-            quote.style.display = index === quoteIndex ? "inline-block" : "none";
-            if (index === quoteIndex) {
-                quote.style.animation = "none"; // Reset animation
-                void quote.offsetWidth; // Trigger reflow
-                quote.style.animation = "typing 2s steps(20, end), blink 0.5s step-end infinite";
-            }
-        });
-        setTimeout(showNextQuote, 4000); // Adjust timing for next quote
-    }
-    showNextQuote();
-})();
-
-
-// Bubble loader script
-document.addEventListener("DOMContentLoaded", function () {
-    const bubbleWrap = document.querySelector('.bubble-wrap');
-    const bubbleCount = 100; // Number of bubbles
-
-    for (let i = 0; i < bubbleCount; i++) {
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        const size = Math.random() * 30 + 1; // Random size between 1 and 30
-        bubble.style.height = `${size}px`;
-        bubble.style.width = `${size}px`;
-        bubble.style.animationDelay = `${-(Math.random() * 10)}s`;
-        bubble.style.transform = `translate3d(${Math.random() * 1000}px, ${Math.random() * 1000}px, ${Math.random() * 2000}px)`;
-        bubble.style.background = 'hsl(128, 100%, 68%)';
-        bubbleWrap.appendChild(bubble);
-    }
-
-    // Hide loader after 5 seconds or once the main content is fully loaded
-    setTimeout(function () {
-        document.getElementById('bubble-loader').style.display = 'none';
-        document.body.style.overflow = 'auto'; // Enable scrolling
-    }, 2000);
-});
-
-
-function initSparkleAnimation(selector) {
-  const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-  const animate = star => {
-    star.style.left = `${rand(-10, 100)}%`;
-    star.style.top = `${rand(-40, 80)}%`;
-    star.style.animation = "none";
-    void star.offsetHeight; // trigger reflow
-    star.style.animation = "";
-  };
-
-  const container = document.querySelector(selector);
-  if (!container) return;
-
-  const stars = container.querySelectorAll('.magic-star');
-  let index = 0;
-  const interval = 1000;
-
-  for (const star of stars) {
-    setTimeout(() => {
-      animate(star);
-      setInterval(() => animate(star), interval);
-    }, index++ * (interval / 3));
-  }
-}
-
-const skillSpans = document.querySelectorAll('.scroll div span');
-
-skillSpans.forEach(span => {
-    // Add the shine class
-    span.classList.add('text-shine');
-
-    // Apply consistent styling
-    span.style.border = `1px solid #666`;
-    span.style.padding = '6px 12px';
-    span.style.margin = '4px';
-    span.style.display = 'inline-block';
-    span.style.borderRadius = '6px';
-});
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const timelineItems = document.querySelectorAll(".timeline-item");
-    const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.2 // Trigger when 20% of item is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    timelineItems.forEach(item => observer.observe(item));
-});
+tabContents.forEach((section) => sectionObserver.observe(section));
